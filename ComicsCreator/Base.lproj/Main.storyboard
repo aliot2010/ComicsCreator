@@ -13,75 +13,78 @@
         <scene sceneID="sPV-sN-rGP">
             <objects>
                 <navigationController id="IOH-G3-7zW" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LxO-hd-zav">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="LxO-hd-zav">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.38035613298416138" green="0.38041514158248901" blue="0.38034319877624512" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="epq-gq-9m2"/>
+                        <segue destination="exw-ii-WBx" kind="relationship" relationship="rootViewController" id="dOc-vt-swv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SMr-IT-c4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-619" y="123"/>
         </scene>
-        <!--Comix Creator-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Comics Creator-->
+        <scene sceneID="mFB-gs-UFO">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="StartPageViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <collectionViewController id="exw-ii-WBx" customClass="ViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ojk-8b-VHp">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gyT-gO-dbB">
-                                <rect key="frame" x="20" y="72" width="984" height="676"/>
+                        <color key="backgroundColor" red="0.3568299412727356" green="0.3568844199180603" blue="0.35681277513504028" alpha="0.42554045376712329" colorSpace="custom" customColorSpace="sRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="50" id="ZsU-oG-kFh">
+                            <size key="itemSize" width="120" height="185"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="40" minY="40" maxX="40" maxY="240"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="GqM-Yv-KYV" customClass="CollectionViewCell" customModule="ComicsCreator" customModuleProvider="target">
+                                <rect key="frame" x="40" y="40" width="120" height="185"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EHA-3a-Bsb">
-                                    <size key="itemSize" width="67" height="77"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="startPageCell" id="cha-Kk-yw0" customClass="CollectionViewCell" customModule="ComicsCreator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="67" height="77"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="67" height="77"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9l-1B-roO">
-                                                    <rect key="frame" x="8" y="8" width="39" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </view>
-                                        <color key="backgroundColor" red="1" green="0.23806511459999999" blue="0.22127781590000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <size key="customSize" width="67" height="77"/>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Comix Creator" id="pX8-CN-5Lq">
-                        <barButtonItem key="rightBarButtonItem" title="Add comics" id="Tzi-5n-wy6"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="185"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1366564980_919021232" translatesAutoresizingMaskIntoConstraints="NO" id="4ee-er-ndT">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="163"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7I-zI-xoC">
+                                            <rect key="frame" x="0.0" y="164" width="120" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.43525353074073792" green="0.43532007932662964" blue="0.43523901700973511" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="34"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <connections>
+                                    <outlet property="image" destination="4ee-er-ndT" id="gF1-Ow-B1d"/>
+                                    <outlet property="label" destination="Y7I-zI-xoC" id="1VS-2h-ggv"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="exw-ii-WBx" id="yS7-os-yrK"/>
+                            <outlet property="delegate" destination="exw-ii-WBx" id="DRx-kP-PBK"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Comics Creator" id="Sa7-tQ-rCl">
+                        <barButtonItem key="rightBarButtonItem" title="Add Comix" id="zuI-IZ-w3W">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="collectionViewItems" destination="gyT-gO-dbB" id="Ejc-7O-vkA"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SbW-ry-GyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.77343749999999" y="123.4375"/>
+            <point key="canvasLocation" x="196.875" y="134.375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="1366564980_919021232" width="675" height="1024"/>
+    </resources>
 </document>
