@@ -7,25 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		150E77E7F8003F8BEBA35FAB /* Pods_ComicsCreator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD60B1F3066D5F192678250A /* Pods_ComicsCreator.framework */; };
 		FA0725961DDD9FC60093C37F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0725951DDD9FC60093C37F /* AppDelegate.swift */; };
 		FA0725981DDD9FC60093C37F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0725971DDD9FC60093C37F /* ViewController.swift */; };
-		FA07259B1DDD9FC60093C37F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0725991DDD9FC60093C37F /* Main.storyboard */; };
 		FA07259D1DDD9FC60093C37F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA07259C1DDD9FC60093C37F /* Assets.xcassets */; };
 		FA0725A01DDD9FC60093C37F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA07259E1DDD9FC60093C37F /* LaunchScreen.storyboard */; };
-		FA0725AD1DDDA64E0093C37F /* StartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0725AC1DDDA64E0093C37F /* StartPageViewController.swift */; };
 		FA0725B31DDDB7820093C37F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0725B21DDDB7820093C37F /* CollectionViewCell.swift */; };
+		FA30D75D1DDE1C1400E57659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA30D75B1DDE1C1400E57659 /* Main.storyboard */; };
+		FA317B0D1DDDF84900CAD924 /* Comics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA317B0C1DDDF84900CAD924 /* Comics.swift */; };
+		FA317B0F1DDDFA3100CAD924 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA317B0E1DDDFA3100CAD924 /* CollectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31608DDD7BAB189DF430B930 /* Pods-ComicsCreator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComicsCreator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ComicsCreator/Pods-ComicsCreator.debug.xcconfig"; sourceTree = "<group>"; };
+		BD60B1F3066D5F192678250A /* Pods_ComicsCreator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ComicsCreator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F32B6B519DD92FC35D844B52 /* Pods-ComicsCreator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ComicsCreator.release.xcconfig"; path = "Pods/Target Support Files/Pods-ComicsCreator/Pods-ComicsCreator.release.xcconfig"; sourceTree = "<group>"; };
 		FA0725921DDD9FC60093C37F /* ComicsCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ComicsCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0725951DDD9FC60093C37F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA0725971DDD9FC60093C37F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FA07259A1DDD9FC60093C37F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA07259C1DDD9FC60093C37F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA07259F1DDD9FC60093C37F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA0725A11DDD9FC60093C37F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA0725AC1DDDA64E0093C37F /* StartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartPageViewController.swift; sourceTree = "<group>"; };
 		FA0725B21DDDB7820093C37F /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		FA30D75C1DDE1C1400E57659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA317B0C1DDDF84900CAD924 /* Comics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comics.swift; sourceTree = "<group>"; };
+		FA317B0E1DDDFA3100CAD924 /* CollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				150E77E7F8003F8BEBA35FAB /* Pods_ComicsCreator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D720F98EB3F4A051B98E6DEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD60B1F3066D5F192678250A /* Pods_ComicsCreator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EFFEE403BC13A07BD64203BD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				31608DDD7BAB189DF430B930 /* Pods-ComicsCreator.debug.xcconfig */,
+				F32B6B519DD92FC35D844B52 /* Pods-ComicsCreator.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FA0725891DDD9FC50093C37F = {
 			isa = PBXGroup;
 			children = (
 				FA0725941DDD9FC60093C37F /* ComicsCreator */,
 				FA0725931DDD9FC60093C37F /* Products */,
+				EFFEE403BC13A07BD64203BD /* Pods */,
+				D720F98EB3F4A051B98E6DEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,12 +84,13 @@
 		FA0725941DDD9FC60093C37F /* ComicsCreator */ = {
 			isa = PBXGroup;
 			children = (
+				FA317B121DDE055200CAD924 /* Create comix page */,
+				FA317B0B1DDDF7A100CAD924 /* model */,
 				FA0725A91DDDA31D0093C37F /* startPage */,
 				FA0725951DDD9FC60093C37F /* AppDelegate.swift */,
-				FA0725971DDD9FC60093C37F /* ViewController.swift */,
-				FA0725991DDD9FC60093C37F /* Main.storyboard */,
 				FA07259C1DDD9FC60093C37F /* Assets.xcassets */,
 				FA07259E1DDD9FC60093C37F /* LaunchScreen.storyboard */,
+				FA30D75B1DDE1C1400E57659 /* Main.storyboard */,
 				FA0725A11DDD9FC60093C37F /* Info.plist */,
 			);
 			path = ComicsCreator;
@@ -72,10 +99,26 @@
 		FA0725A91DDDA31D0093C37F /* startPage */ = {
 			isa = PBXGroup;
 			children = (
-				FA0725AC1DDDA64E0093C37F /* StartPageViewController.swift */,
+				FA0725971DDD9FC60093C37F /* ViewController.swift */,
 				FA0725B21DDDB7820093C37F /* CollectionViewCell.swift */,
+				FA317B0E1DDDFA3100CAD924 /* CollectionViewModel.swift */,
 			);
 			name = startPage;
+			sourceTree = "<group>";
+		};
+		FA317B0B1DDDF7A100CAD924 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				FA317B0C1DDDF84900CAD924 /* Comics.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		FA317B121DDE055200CAD924 /* Create comix page */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Create comix page";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,9 +128,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA0725A41DDD9FC60093C37F /* Build configuration list for PBXNativeTarget "ComicsCreator" */;
 			buildPhases = (
+				5DF92A8B1651B0F04EC807DF /* [CP] Check Pods Manifest.lock */,
 				FA07258E1DDD9FC60093C37F /* Sources */,
 				FA07258F1DDD9FC60093C37F /* Frameworks */,
 				FA0725901DDD9FC60093C37F /* Resources */,
+				4682C741E5CE8139F7EFD06F /* [CP] Embed Pods Frameworks */,
+				A3335782A9FC46D03F1865E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,13 +183,61 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA30D75D1DDE1C1400E57659 /* Main.storyboard in Resources */,
 				FA0725A01DDD9FC60093C37F /* LaunchScreen.storyboard in Resources */,
 				FA07259D1DDD9FC60093C37F /* Assets.xcassets in Resources */,
-				FA07259B1DDD9FC60093C37F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4682C741E5CE8139F7EFD06F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ComicsCreator/Pods-ComicsCreator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5DF92A8B1651B0F04EC807DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A3335782A9FC46D03F1865E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ComicsCreator/Pods-ComicsCreator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA07258E1DDD9FC60093C37F /* Sources */ = {
@@ -151,29 +245,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA0725981DDD9FC60093C37F /* ViewController.swift in Sources */,
-				FA0725AD1DDDA64E0093C37F /* StartPageViewController.swift in Sources */,
+				FA317B0D1DDDF84900CAD924 /* Comics.swift in Sources */,
 				FA0725B31DDDB7820093C37F /* CollectionViewCell.swift in Sources */,
 				FA0725961DDD9FC60093C37F /* AppDelegate.swift in Sources */,
+				FA317B0F1DDDFA3100CAD924 /* CollectionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FA0725991DDD9FC60093C37F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA07259A1DDD9FC60093C37F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FA07259E1DDD9FC60093C37F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				FA07259F1DDD9FC60093C37F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FA30D75B1DDE1C1400E57659 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA30D75C1DDE1C1400E57659 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -274,6 +369,7 @@
 		};
 		FA0725A51DDD9FC60093C37F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31608DDD7BAB189DF430B930 /* Pods-ComicsCreator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ComicsCreator/Info.plist;
@@ -286,6 +382,7 @@
 		};
 		FA0725A61DDD9FC60093C37F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F32B6B519DD92FC35D844B52 /* Pods-ComicsCreator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ComicsCreator/Info.plist;

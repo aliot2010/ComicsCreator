@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "rozhicy_cherno_beloe_nadpisi_1920x1200.jpg",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
