@@ -9,8 +9,13 @@
 import UIKit
 import RealmSwift
 
-class Comicses: Object {
+class Comics: Object {
     dynamic var name = ""
     dynamic var pathToFile = ""
+    dynamic var comicsId = ""
+    
+    override public static func primaryKey() -> String?{
+        return "comicsId"
+    }
     
 }

@@ -13,7 +13,10 @@
 		FA07259D1DDD9FC60093C37F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA07259C1DDD9FC60093C37F /* Assets.xcassets */; };
 		FA0725A01DDD9FC60093C37F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA07259E1DDD9FC60093C37F /* LaunchScreen.storyboard */; };
 		FA0725B31DDDB7820093C37F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0725B21DDDB7820093C37F /* CollectionViewCell.swift */; };
+		FA0749CF1DDF5035000A42B7 /* ObjectManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0749CE1DDF5035000A42B7 /* ObjectManager.swift */; };
+		FA0749D11DDF5322000A42B7 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0749D01DDF5322000A42B7 /* Tools.swift */; };
 		FA30D75D1DDE1C1400E57659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA30D75B1DDE1C1400E57659 /* Main.storyboard */; };
+		FA30D75F1DDE20B000E57659 /* StartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30D75E1DDE20B000E57659 /* StartPageViewController.swift */; };
 		FA317B0D1DDDF84900CAD924 /* Comics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA317B0C1DDDF84900CAD924 /* Comics.swift */; };
 		FA317B0F1DDDFA3100CAD924 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA317B0E1DDDFA3100CAD924 /* CollectionViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +32,10 @@
 		FA07259F1DDD9FC60093C37F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA0725A11DDD9FC60093C37F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA0725B21DDDB7820093C37F /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		FA0749CE1DDF5035000A42B7 /* ObjectManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectManager.swift; sourceTree = "<group>"; };
+		FA0749D01DDF5322000A42B7 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		FA30D75C1DDE1C1400E57659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA30D75E1DDE20B000E57659 /* StartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartPageViewController.swift; sourceTree = "<group>"; };
 		FA317B0C1DDDF84900CAD924 /* Comics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comics.swift; sourceTree = "<group>"; };
 		FA317B0E1DDDFA3100CAD924 /* CollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				FA317B121DDE055200CAD924 /* Create comix page */,
-				FA317B0B1DDDF7A100CAD924 /* model */,
+				FA317B0B1DDDF7A100CAD924 /* modelsAndManagersRealm */,
 				FA0725A91DDDA31D0093C37F /* startPage */,
 				FA0725951DDD9FC60093C37F /* AppDelegate.swift */,
 				FA07259C1DDD9FC60093C37F /* Assets.xcassets */,
@@ -106,17 +112,20 @@
 			name = startPage;
 			sourceTree = "<group>";
 		};
-		FA317B0B1DDDF7A100CAD924 /* model */ = {
+		FA317B0B1DDDF7A100CAD924 /* modelsAndManagersRealm */ = {
 			isa = PBXGroup;
 			children = (
 				FA317B0C1DDDF84900CAD924 /* Comics.swift */,
+				FA0749CE1DDF5035000A42B7 /* ObjectManager.swift */,
+				FA0749D01DDF5322000A42B7 /* Tools.swift */,
 			);
-			name = model;
+			name = modelsAndManagersRealm;
 			sourceTree = "<group>";
 		};
 		FA317B121DDE055200CAD924 /* Create comix page */ = {
 			isa = PBXGroup;
 			children = (
+				FA30D75E1DDE20B000E57659 /* StartPageViewController.swift */,
 			);
 			name = "Create comix page";
 			sourceTree = "<group>";
@@ -248,7 +257,10 @@
 				FA317B0D1DDDF84900CAD924 /* Comics.swift in Sources */,
 				FA0725B31DDDB7820093C37F /* CollectionViewCell.swift in Sources */,
 				FA0725961DDD9FC60093C37F /* AppDelegate.swift in Sources */,
+				FA30D75F1DDE20B000E57659 /* StartPageViewController.swift in Sources */,
+				FA0749CF1DDF5035000A42B7 /* ObjectManager.swift in Sources */,
 				FA317B0F1DDDFA3100CAD924 /* CollectionViewModel.swift in Sources */,
+				FA0749D11DDF5322000A42B7 /* Tools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

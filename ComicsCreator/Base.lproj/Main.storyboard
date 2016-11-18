@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IOH-G3-7zW">
-    <device id="ipad9_7" orientation="landscape">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -31,7 +31,7 @@
             <objects>
                 <collectionViewController id="exw-ii-WBx" customClass="ViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ojk-8b-VHp">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.3568299412727356" green="0.3568844199180603" blue="0.35681277513504028" alpha="0.42554045376712329" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="50" id="ZsU-oG-kFh">
@@ -86,75 +86,74 @@
             </objects>
             <point key="canvasLocation" x="196.875" y="134.375"/>
         </scene>
-        <!--View Controller-->
+        <!--Start Page View Controller-->
         <scene sceneID="Zbt-5G-hNM">
             <objects>
-                <viewController id="CwM-l3-CUL" sceneMemberID="viewController">
+                <viewController id="CwM-l3-CUL" customClass="StartPageViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZLw-IU-Jc4"/>
                         <viewControllerLayoutGuide type="bottom" id="qb9-zb-2Th"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oxv-ql-dnd">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MuA-hg-BGl">
-                                <rect key="frame" x="0.0" y="63" width="1024" height="705"/>
+                                <rect key="frame" x="0.0" y="63" width="768" height="961"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="rVE-0J-iFc">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="705"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="961"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q67-JJ-1Xy">
-                                            <rect key="frame" x="148" y="484" width="258" height="30"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <state key="normal" title="Pick cover in your Photo Library"/>
-                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add title of your comics:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgH-68-TB8">
-                                            <rect key="frame" x="646" y="71" width="264" height="36"/>
+                                            <rect key="frame" x="263" y="587" width="264" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O29-85-kQd">
-                                            <rect key="frame" x="646" y="115" width="215" height="30"/>
+                                            <rect key="frame" x="277" y="631" width="215" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1366564980_919021232" translatesAutoresizingMaskIntoConstraints="NO" id="fZ0-g7-X4D">
+                                            <rect key="frame" x="234" y="22" width="300" height="424"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIv-GF-epQ">
-                                            <rect key="frame" x="785" y="468" width="76" height="46"/>
+                                            <rect key="frame" x="684" y="907" width="76" height="46"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                             <state key="normal" title="Create">
                                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="1366564980_919021232" translatesAutoresizingMaskIntoConstraints="NO" id="fZ0-g7-X4D">
-                                            <rect key="frame" x="106" y="18" width="300" height="400"/>
-                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMc-WR-a6C">
+                                            <rect key="frame" x="349" y="508" width="70" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Add cover"/>
+                                            <connections>
+                                                <action selector="buttonAddClicked:" destination="CwM-l3-CUL" eventType="touchUpInside" id="i52-5s-3D3"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="fZ0-g7-X4D" firstAttribute="top" secondItem="rVE-0J-iFc" secondAttribute="top" constant="18" id="4CL-ea-vIK"/>
-                                        <constraint firstItem="q67-JJ-1Xy" firstAttribute="top" secondItem="fZ0-g7-X4D" secondAttribute="bottom" constant="48" id="APl-EE-YQQ"/>
-                                        <constraint firstAttribute="bottom" secondItem="q67-JJ-1Xy" secondAttribute="bottom" constant="195" id="MHt-YJ-6mG"/>
-                                        <constraint firstAttribute="trailing" secondItem="fZ0-g7-X4D" secondAttribute="trailing" constant="597" id="VjU-SY-XDj"/>
-                                        <constraint firstAttribute="bottom" secondItem="fZ0-g7-X4D" secondAttribute="bottom" constant="273" id="j2x-Dn-z8m"/>
-                                        <constraint firstItem="q67-JJ-1Xy" firstAttribute="leading" secondItem="rVE-0J-iFc" secondAttribute="leading" constant="169" id="xak-d0-3rk"/>
-                                        <constraint firstItem="fZ0-g7-X4D" firstAttribute="leading" secondItem="rVE-0J-iFc" secondAttribute="leading" constant="127" id="xzN-XB-TaB"/>
-                                    </constraints>
                                 </view>
                                 <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="fZ0-g7-X4D" id="2dw-D3-svC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="puE-ic-bxD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1022" y="491"/>
+            <point key="canvasLocation" x="915.625" y="-412.5"/>
         </scene>
     </scenes>
     <resources>
