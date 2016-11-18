@@ -36,6 +36,7 @@ class StartPageViewController: UIViewController, UIImagePickerControllerDelegate
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             imageView.contentMode = .scaleAspectFit
             imageView.image = pickedImage
+            imageView.contentMode = UIViewContentMode.scaleAspectFill
             let fileManager = FileManager.default
             let docsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).last! as NSURL
             let fileURL = docsURL.appendingPathComponent("photo")
