@@ -11,6 +11,7 @@ import UIKit
 class StartPageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     let imagePicker = UIImagePickerController()
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleTextField: UITextField!
     
     override func viewDidLoad() {//
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class StartPageViewController: UIViewController, UIImagePickerControllerDelegate
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
 
@@ -32,6 +34,13 @@ class StartPageViewController: UIViewController, UIImagePickerControllerDelegate
         present(imagePicker, animated: true, completion: nil)
     }
 
+    @IBAction func createComics(_ sender: UIButton) {
+        let text = titleTextField.text
+        let comics = Comics()
+        comics.title = text!
+        Storage.common.addNewComix(comix: comics)
+        
+    }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
             imageView.contentMode = .scaleAspectFit

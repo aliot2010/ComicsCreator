@@ -30,7 +30,7 @@
         <scene sceneID="mFB-gs-UFO">
             <objects>
                 <collectionViewController id="exw-ii-WBx" customClass="ViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ojk-8b-VHp">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="ojk-8b-VHp">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.3568299412727356" green="0.3568844199180603" blue="0.35681277513504028" alpha="0.42554045376712329" colorSpace="custom" customColorSpace="sRGB"/>
@@ -124,20 +124,24 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIv-GF-epQ">
-                                            <rect key="frame" x="684" y="907" width="76" height="46"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                            <state key="normal" title="Create">
-                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMc-WR-a6C">
                                             <rect key="frame" x="349" y="508" width="70" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="Add cover"/>
                                             <connections>
                                                 <action selector="buttonAddClicked:" destination="CwM-l3-CUL" eventType="touchUpInside" id="i52-5s-3D3"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIv-GF-epQ">
+                                            <rect key="frame" x="574" y="631" width="76" height="46"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                            <state key="normal" title="Create">
+                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="createComics:" destination="CwM-l3-CUL" eventType="touchUpInside" id="fai-9V-11o"/>
+                                                <segue destination="exw-ii-WBx" kind="show" id="gfc-mR-wpf"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -149,6 +153,7 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="fZ0-g7-X4D" id="2dw-D3-svC"/>
+                        <outlet property="titleTextField" destination="O29-85-kQd" id="0k4-vq-kW1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="puE-ic-bxD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -159,4 +164,7 @@
     <resources>
         <image name="1366564980_919021232" width="675" height="1024"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gfc-mR-wpf"/>
+    </inferredMetricsTieBreakers>
 </document>

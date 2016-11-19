@@ -13,6 +13,9 @@
 		FA07259D1DDD9FC60093C37F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA07259C1DDD9FC60093C37F /* Assets.xcassets */; };
 		FA0725A01DDD9FC60093C37F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA07259E1DDD9FC60093C37F /* LaunchScreen.storyboard */; };
 		FA0725B31DDDB7820093C37F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0725B21DDDB7820093C37F /* CollectionViewCell.swift */; };
+		FA0B1F021DE05173000B1D22 /* Comics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F011DE05173000B1D22 /* Comics.swift */; };
+		FA0B1F041DE056CB000B1D22 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F031DE056CB000B1D22 /* Tools.swift */; };
+		FA0B1F061DE058B6000B1D22 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F051DE058B6000B1D22 /* StorageManager.swift */; };
 		FA30D75D1DDE1C1400E57659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA30D75B1DDE1C1400E57659 /* Main.storyboard */; };
 		FA30D75F1DDE20B000E57659 /* StartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30D75E1DDE20B000E57659 /* StartPageViewController.swift */; };
 		FA317B0F1DDDFA3100CAD924 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA317B0E1DDDFA3100CAD924 /* CollectionViewModel.swift */; };
@@ -29,6 +32,9 @@
 		FA07259F1DDD9FC60093C37F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA0725A11DDD9FC60093C37F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA0725B21DDDB7820093C37F /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		FA0B1F011DE05173000B1D22 /* Comics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comics.swift; sourceTree = "<group>"; };
+		FA0B1F031DE056CB000B1D22 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		FA0B1F051DE058B6000B1D22 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		FA30D75C1DDE1C1400E57659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA30D75E1DDE20B000E57659 /* StartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartPageViewController.swift; sourceTree = "<group>"; };
 		FA317B0E1DDDFA3100CAD924 /* CollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
@@ -84,6 +90,7 @@
 		FA0725941DDD9FC60093C37F /* ComicsCreator */ = {
 			isa = PBXGroup;
 			children = (
+				FA0B1F001DE05092000B1D22 /* Models */,
 				FA317B121DDE055200CAD924 /* Create comix page */,
 				FA0725A91DDDA31D0093C37F /* startPage */,
 				FA0725951DDD9FC60093C37F /* AppDelegate.swift */,
@@ -103,6 +110,16 @@
 				FA317B0E1DDDFA3100CAD924 /* CollectionViewModel.swift */,
 			);
 			name = startPage;
+			sourceTree = "<group>";
+		};
+		FA0B1F001DE05092000B1D22 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA0B1F011DE05173000B1D22 /* Comics.swift */,
+				FA0B1F031DE056CB000B1D22 /* Tools.swift */,
+				FA0B1F051DE058B6000B1D22 /* StorageManager.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		FA317B121DDE055200CAD924 /* Create comix page */ = {
@@ -148,7 +165,7 @@
 				TargetAttributes = {
 					FA0725911DDD9FC60093C37F = {
 						CreatedOnToolsVersion = 8.1;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -240,7 +257,10 @@
 				FA0725B31DDDB7820093C37F /* CollectionViewCell.swift in Sources */,
 				FA0725961DDD9FC60093C37F /* AppDelegate.swift in Sources */,
 				FA30D75F1DDE20B000E57659 /* StartPageViewController.swift in Sources */,
+				FA0B1F041DE056CB000B1D22 /* Tools.swift in Sources */,
 				FA317B0F1DDDFA3100CAD924 /* CollectionViewModel.swift in Sources */,
+				FA0B1F021DE05173000B1D22 /* Comics.swift in Sources */,
+				FA0B1F061DE058B6000B1D22 /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +304,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -334,6 +355,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -363,7 +385,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 31608DDD7BAB189DF430B930 /* Pods-ComicsCreator.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ComicsCreator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = itr.ComicsCreator;
@@ -376,7 +401,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F32B6B519DD92FC35D844B52 /* Pods-ComicsCreator.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ComicsCreator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = itr.ComicsCreator;
