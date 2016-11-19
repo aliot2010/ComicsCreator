@@ -16,6 +16,8 @@
 		FA0B1F021DE05173000B1D22 /* Comics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F011DE05173000B1D22 /* Comics.swift */; };
 		FA0B1F041DE056CB000B1D22 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F031DE056CB000B1D22 /* Tools.swift */; };
 		FA0B1F061DE058B6000B1D22 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F051DE058B6000B1D22 /* StorageManager.swift */; };
+		FA0B1F091DE0705A000B1D22 /* PagesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F081DE0705A000B1D22 /* PagesCollectionViewController.swift */; };
+		FA0B1F0B1DE07279000B1D22 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F0A1DE07279000B1D22 /* Page.swift */; };
 		FA30D75D1DDE1C1400E57659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA30D75B1DDE1C1400E57659 /* Main.storyboard */; };
 		FA30D75F1DDE20B000E57659 /* StartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30D75E1DDE20B000E57659 /* StartPageViewController.swift */; };
 		FA317B0F1DDDFA3100CAD924 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA317B0E1DDDFA3100CAD924 /* CollectionViewModel.swift */; };
@@ -35,6 +37,8 @@
 		FA0B1F011DE05173000B1D22 /* Comics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comics.swift; sourceTree = "<group>"; };
 		FA0B1F031DE056CB000B1D22 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		FA0B1F051DE058B6000B1D22 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		FA0B1F081DE0705A000B1D22 /* PagesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagesCollectionViewController.swift; sourceTree = "<group>"; };
+		FA0B1F0A1DE07279000B1D22 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		FA30D75C1DDE1C1400E57659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA30D75E1DDE20B000E57659 /* StartPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartPageViewController.swift; sourceTree = "<group>"; };
 		FA317B0E1DDDFA3100CAD924 /* CollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 		FA0725941DDD9FC60093C37F /* ComicsCreator */ = {
 			isa = PBXGroup;
 			children = (
+				FA0B1F071DE07026000B1D22 /* PagesController */,
 				FA0B1F001DE05092000B1D22 /* Models */,
 				FA317B121DDE055200CAD924 /* Create comix page */,
 				FA0725A91DDDA31D0093C37F /* startPage */,
@@ -118,8 +123,17 @@
 				FA0B1F011DE05173000B1D22 /* Comics.swift */,
 				FA0B1F031DE056CB000B1D22 /* Tools.swift */,
 				FA0B1F051DE058B6000B1D22 /* StorageManager.swift */,
+				FA0B1F0A1DE07279000B1D22 /* Page.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		FA0B1F071DE07026000B1D22 /* PagesController */ = {
+			isa = PBXGroup;
+			children = (
+				FA0B1F081DE0705A000B1D22 /* PagesCollectionViewController.swift */,
+			);
+			name = PagesController;
 			sourceTree = "<group>";
 		};
 		FA317B121DDE055200CAD924 /* Create comix page */ = {
@@ -256,6 +270,8 @@
 				FA0725981DDD9FC60093C37F /* ViewController.swift in Sources */,
 				FA0725B31DDDB7820093C37F /* CollectionViewCell.swift in Sources */,
 				FA0725961DDD9FC60093C37F /* AppDelegate.swift in Sources */,
+				FA0B1F091DE0705A000B1D22 /* PagesCollectionViewController.swift in Sources */,
+				FA0B1F0B1DE07279000B1D22 /* Page.swift in Sources */,
 				FA30D75F1DDE20B000E57659 /* StartPageViewController.swift in Sources */,
 				FA0B1F041DE056CB000B1D22 /* Tools.swift in Sources */,
 				FA317B0F1DDDFA3100CAD924 /* CollectionViewModel.swift in Sources */,

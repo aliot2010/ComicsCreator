@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UICollectionViewController {
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,12 +34,27 @@ class ViewController: UICollectionViewController {
         
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        //cell.label.text = String(indexPath.row)
-       // cell.imageViewInCell.image = UIImage(imageLiteralResourceName:"1366564980_919021232")
+        
+        cell.label.text = Storage.common.comicsList[indexPath.row].title
+        cell.image.contentMode = UIViewContentMode.scaleAspectFill
+        cell.image.image = Storage.common.loadImage(imageName: Storage.common.comicsList[indexPath.row].cover)
         return cell
         
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender:sender)
+        guard segue.identifier == "mainToItem" else {return}
+        guard let pageVC = segue.destination as? PagesCollectionViewController else {
+            return
+        }
+        pageVC.index = sender as! Int
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "mainToItem", sender:indexPath.row)
+    }
+    
 
 
 }

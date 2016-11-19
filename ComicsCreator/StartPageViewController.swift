@@ -13,6 +13,7 @@ class StartPageViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     
+    
     override func viewDidLoad() {//
         super.viewDidLoad()
         imagePicker.delegate = self
@@ -38,23 +39,26 @@ class StartPageViewController: UIViewController, UIImagePickerControllerDelegate
         let text = titleTextField.text
         let comics = Comics()
         comics.title = text!
+        comics.cover = Storage.common.saveImage(image: imageView.image!)
         Storage.common.addNewComix(comix: comics)
         
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            imageView.contentMode = .scaleAspectFit
+            //imageView.contentMode = .scaleAspectFit
             imageView.image = pickedImage
             imageView.contentMode = UIViewContentMode.scaleAspectFill
-            let fileManager = FileManager.default
-            let docsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).last! as NSURL
-            let fileURL = docsURL.appendingPathComponent("photo")
-            let data = UIImageJPEGRepresentation(pickedImage, 0.5)
-            do{
-                try data?.write(to: fileURL!)
-            } catch is Error {
-                print("Error in saving image")
-            }
+            
+//            let fileManager = FileManager.default
+//            let docsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).last! as NSURL
+//            let fileURL = docsURL.appendingPathComponent("photo")
+//            let data = UIImageJPEGRepresentation(pickedImage, 0.5)
+//            do{
+//                try data?.write(to: fileURL!)
+//            } catch is Error {
+//                print("Error in saving image")
+//            }
+              
         }
         dismiss(animated: true, completion: nil)
         

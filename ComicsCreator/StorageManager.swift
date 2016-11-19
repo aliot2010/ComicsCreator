@@ -32,10 +32,12 @@ class Storage{
         }
     }
     
-    func saveImage(image : UIImage){
-        let photoURL = NSURL(fileURLWithPath: documentsDirPath).appendingPathComponent(Tools.getTimeAsString())
+    func saveImage(image : UIImage)->String{
+        let IMGName = Tools.getTimeAsString()
+        let photoURL = NSURL(fileURLWithPath: documentsDirPath).appendingPathComponent(IMGName)
         let data = UIImagePNGRepresentation(image)
         try! data?.write(to: photoURL!, options: Data.WritingOptions.atomic)
+        return IMGName
     }
     
     func loadImage(imageName: String) -> UIImage? {
