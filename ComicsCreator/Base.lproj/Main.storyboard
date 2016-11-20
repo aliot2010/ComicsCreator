@@ -81,9 +81,12 @@
                     </collectionView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="RsF-4G-8aB"/>
-                        <barButtonItem systemItem="trash" id="meq-fZ-yta"/>
-                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="c3d-Ll-8jC"/>
+                        <barButtonItem systemItem="trash" id="meq-fZ-yta">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="69S-XQ-7uG"/>
                         <barButtonItem systemItem="add" id="61o-k3-Kds">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="CwM-l3-CUL" kind="show" id="Kjt-BI-z0w"/>
                             </connections>
@@ -103,11 +106,11 @@
             </objects>
             <point key="canvasLocation" x="196.875" y="134.375"/>
         </scene>
-        <!--Pages Collection View Controller-->
+        <!--Title-->
         <scene sceneID="2dq-Iu-BIs">
             <objects>
                 <collectionViewController id="vb8-CO-tHR" customClass="PagesCollectionViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="lO4-Ig-fPm">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="lO4-Ig-fPm">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -158,9 +161,6 @@
                     </collectionView>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="OVO-hM-rxa"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ReV-Ie-7pu"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="sPa-xF-vyT"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Wgz-A8-XYk"/>
                         <barButtonItem systemItem="trash" id="9sT-o4-g0R">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
@@ -171,11 +171,22 @@
                                 <action selector="addPge:" destination="vb8-CO-tHR" id="jgB-OM-KKo"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="WGj-jb-Fgm"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="xHH-6c-k2P"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="MkD-F2-39D"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="rcn-lg-8RO"/>
                     </toolbarItems>
+                    <navigationItem key="navigationItem" title="Title" id="UH1-bX-EjM">
+                        <barButtonItem key="rightBarButtonItem" image="1366564980_919021232" style="plain" id="vhM-hP-Ch2">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="mmi-5f-1s6">
+                                <rect key="frame" x="578" y="7" width="170" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Read Mode"/>
+                                    <segment title="Edit Mode"/>
+                                </segments>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </segmentedControl>
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FG4-8a-FYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
