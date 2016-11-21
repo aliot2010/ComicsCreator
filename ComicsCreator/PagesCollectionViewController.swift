@@ -12,8 +12,31 @@ private let reuseIdentifier = "Cell"
 
 class PagesCollectionViewController: UICollectionViewController {
      public var index = 0
+    var modeFlag = 0
+    var selectedIndex = -1
     
-   
+    @IBOutlet weak var switchFlag: UIBarButtonItem!
+
+    
+    @IBAction func switchMode(_ sender: UISegmentedControl) {
+        if (modeFlag==0){
+                        modeFlag = 1
+                    } else {
+                        modeFlag = 0
+                        let cell = collectionView?.cellForItem(at: IndexPath(item: selectedIndex, section: 0))
+                        cell?.backgroundColor = UIColor.clear
+                        selectedIndex = -1
+                    }
+        
+    }
+    
+    
+    @IBAction func editPageClicked(_ sender: UIBarButtonItem) {
+        if (modeFlag == 1){
+            self.performSegue(withIdentifier: "pagesToPadeditor", sender: selectedIndex)
+        }
+    }
+    
     @IBAction func addPge(_ sender: UIBarButtonItem) {
         let page = Page()
         try! Storage.common.realm.write {
@@ -24,6 +47,7 @@ class PagesCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "rozhicy_cherno_beloe_nadpisi_1920x1200" )!)
     }
     
@@ -32,9 +56,7 @@ class PagesCollectionViewController: UICollectionViewController {
 
     }
     
-    @IBAction func addPage(_ sender: UIBarButtonItem) {
-        
-    }
+   
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return Storage.common.comicsList[index].pages.count
@@ -54,7 +76,30 @@ class PagesCollectionViewController: UICollectionViewController {
         
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+       
+        
+        if(modeFlag == 1){
+            selectedIndex = indexPath.row
+            let cell = collectionView.cellForItem(at: indexPath)
+        
+            cell?.backgroundColor = UIColor.orange
+        } else {
+            openPageInReadMode(byIndex: indexPath.row)
+        }
+        
+    }
+    
    
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.backgroundColor = UIColor.clear
+    }
+   
+    func openPageInReadMode(byIndex:Int){
+        self.performSegue(withIdentifier: "pagesToPagereader", sender: selectedIndex)
+
+    }
     
 
 }
