@@ -18,6 +18,11 @@
 		FA0B1F061DE058B6000B1D22 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F051DE058B6000B1D22 /* StorageManager.swift */; };
 		FA0B1F091DE0705A000B1D22 /* PagesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F081DE0705A000B1D22 /* PagesCollectionViewController.swift */; };
 		FA0B1F0B1DE07279000B1D22 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F0A1DE07279000B1D22 /* Page.swift */; };
+		FA1D7B4E1DE45FFF006F658B /* SingleImagePageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D7B4D1DE45FFF006F658B /* SingleImagePageView.xib */; };
+		FA1D7B521DE46293006F658B /* DualImagePageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D7B511DE46293006F658B /* DualImagePageView.xib */; };
+		FA1D7B541DE4650C006F658B /* DualImagePageView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D7B531DE4650C006F658B /* DualImagePageView1.xib */; };
+		FA1D7B561DE47904006F658B /* DualImagePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D7B551DE47904006F658B /* DualImagePageView.swift */; };
+		FA1D7B591DE47D32006F658B /* EditModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D7B581DE47D32006F658B /* EditModeViewController.swift */; };
 		FA30D75D1DDE1C1400E57659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA30D75B1DDE1C1400E57659 /* Main.storyboard */; };
 		FA30D75F1DDE20B000E57659 /* CreateComicsCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30D75E1DDE20B000E57659 /* CreateComicsCover.swift */; };
 		FA317B0F1DDDFA3100CAD924 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA317B0E1DDDFA3100CAD924 /* CollectionViewModel.swift */; };
@@ -39,6 +44,11 @@
 		FA0B1F051DE058B6000B1D22 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		FA0B1F081DE0705A000B1D22 /* PagesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagesCollectionViewController.swift; sourceTree = "<group>"; };
 		FA0B1F0A1DE07279000B1D22 /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		FA1D7B4D1DE45FFF006F658B /* SingleImagePageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleImagePageView.xib; sourceTree = "<group>"; };
+		FA1D7B511DE46293006F658B /* DualImagePageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DualImagePageView.xib; sourceTree = "<group>"; };
+		FA1D7B531DE4650C006F658B /* DualImagePageView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DualImagePageView1.xib; sourceTree = "<group>"; };
+		FA1D7B551DE47904006F658B /* DualImagePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DualImagePageView.swift; sourceTree = "<group>"; };
+		FA1D7B581DE47D32006F658B /* EditModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditModeViewController.swift; sourceTree = "<group>"; };
 		FA30D75C1DDE1C1400E57659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA30D75E1DDE20B000E57659 /* CreateComicsCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateComicsCover.swift; sourceTree = "<group>"; };
 		FA317B0E1DDDFA3100CAD924 /* CollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
@@ -94,6 +104,7 @@
 		FA0725941DDD9FC60093C37F /* ComicsCreator */ = {
 			isa = PBXGroup;
 			children = (
+				FA1D7B571DE47D04006F658B /* EditMode */,
 				FA1D7B4C1DE45ECA006F658B /* Patterns */,
 				FA0B1F071DE07026000B1D22 /* PagesController */,
 				FA0B1F001DE05092000B1D22 /* Models */,
@@ -140,8 +151,21 @@
 		FA1D7B4C1DE45ECA006F658B /* Patterns */ = {
 			isa = PBXGroup;
 			children = (
+				FA1D7B4D1DE45FFF006F658B /* SingleImagePageView.xib */,
+				FA1D7B511DE46293006F658B /* DualImagePageView.xib */,
+				FA1D7B531DE4650C006F658B /* DualImagePageView1.xib */,
+				FA1D7B551DE47904006F658B /* DualImagePageView.swift */,
 			);
 			name = Patterns;
+			sourceTree = "<group>";
+		};
+		FA1D7B571DE47D04006F658B /* EditMode */ = {
+			isa = PBXGroup;
+			children = (
+				FA1D7B581DE47D32006F658B /* EditModeViewController.swift */,
+			);
+			name = EditMode;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		FA317B121DDE055200CAD924 /* Create comix page */ = {
@@ -214,7 +238,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1D7B521DE46293006F658B /* DualImagePageView.xib in Resources */,
 				FA30D75D1DDE1C1400E57659 /* Main.storyboard in Resources */,
+				FA1D7B4E1DE45FFF006F658B /* SingleImagePageView.xib in Resources */,
+				FA1D7B541DE4650C006F658B /* DualImagePageView1.xib in Resources */,
 				FA0725A01DDD9FC60093C37F /* LaunchScreen.storyboard in Resources */,
 				FA07259D1DDD9FC60093C37F /* Assets.xcassets in Resources */,
 			);
@@ -279,6 +306,8 @@
 				FA0725B31DDDB7820093C37F /* CollectionViewCell.swift in Sources */,
 				FA0725961DDD9FC60093C37F /* AppDelegate.swift in Sources */,
 				FA0B1F091DE0705A000B1D22 /* PagesCollectionViewController.swift in Sources */,
+				FA1D7B561DE47904006F658B /* DualImagePageView.swift in Sources */,
+				FA1D7B591DE47D32006F658B /* EditModeViewController.swift in Sources */,
 				FA0B1F0B1DE07279000B1D22 /* Page.swift in Sources */,
 				FA30D75F1DDE20B000E57659 /* CreateComicsCover.swift in Sources */,
 				FA0B1F041DE056CB000B1D22 /* Tools.swift in Sources */,

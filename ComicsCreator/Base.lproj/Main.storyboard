@@ -57,6 +57,7 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1366564980_919021232" translatesAutoresizingMaskIntoConstraints="NO" id="4ee-er-ndT">
                                             <rect key="frame" x="3" y="3" width="114" height="160"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" red="0.4352535307" green="0.4353200793" blue="0.43523901700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <edgeInsets key="layoutMargins" top="4" left="4" bottom="8" right="3"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7I-zI-xoC">
@@ -112,7 +113,7 @@
         <scene sceneID="2dq-Iu-BIs">
             <objects>
                 <collectionViewController id="vb8-CO-tHR" customClass="PagesCollectionViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="lO4-Ig-fPm">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="lO4-Ig-fPm">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -223,7 +224,7 @@
         <!--Edit Mode-->
         <scene sceneID="Ydn-l2-zZz">
             <objects>
-                <viewController id="zuV-gA-W6h" sceneMemberID="viewController">
+                <viewController id="zuV-gA-W6h" customClass="EditModeViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vA2-Co-Ph3"/>
                         <viewControllerLayoutGuide type="bottom" id="CH8-Rx-ZMG"/>
@@ -231,9 +232,20 @@
                     <view key="view" contentMode="scaleToFill" id="z34-sg-1fJ">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cMY-ZV-dAL">
+                                <rect key="frame" x="20" y="64" width="728" height="821"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Mode" id="7HW-Lh-PAo"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="editPlace" destination="cMY-ZV-dAL" id="6dI-if-cp2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faO-vz-632" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
