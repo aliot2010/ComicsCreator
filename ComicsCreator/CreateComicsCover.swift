@@ -18,7 +18,10 @@ class StartPageViewController: UIViewController, UIImagePickerControllerDelegate
         super.viewDidLoad()
         imagePicker.delegate = self
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "rozhicy_cherno_beloe_nadpisi_1920x1200" )!)
-
+       
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
         
     }
 

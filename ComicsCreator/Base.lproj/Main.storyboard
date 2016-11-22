@@ -55,8 +55,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1366564980_919021232" translatesAutoresizingMaskIntoConstraints="NO" id="4ee-er-ndT">
-                                            <rect key="frame" x="0.0" y="0.0" width="120" height="163"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                            <rect key="frame" x="3" y="3" width="114" height="160"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <edgeInsets key="layoutMargins" top="4" left="4" bottom="8" right="3"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7I-zI-xoC">
                                             <rect key="frame" x="0.0" y="164" width="120" height="21"/>
@@ -68,6 +69,7 @@
                                         </label>
                                     </subviews>
                                 </view>
+                                <color key="backgroundColor" red="0.41564735770225525" green="0.4157111644744873" blue="0.41563338041305542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="image" destination="4ee-er-ndT" id="gF1-Ow-B1d"/>
                                     <outlet property="label" destination="Y7I-zI-xoC" id="1VS-2h-ggv"/>
@@ -104,16 +106,16 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SbW-ry-GyK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="196.875" y="134.375"/>
+            <point key="canvasLocation" x="196.875" y="134.1796875"/>
         </scene>
-        <!--Title-->
+        <!--Pages Collection View Controller-->
         <scene sceneID="2dq-Iu-BIs">
             <objects>
                 <collectionViewController id="vb8-CO-tHR" customClass="PagesCollectionViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="lO4-Ig-fPm">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="lO4-Ig-fPm">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="50" id="knx-87-yMJ">
                             <size key="itemSize" width="120" height="169"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -179,29 +181,24 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="za4-dt-uxr"/>
-                        <barButtonItem image="1366564980_919021232" style="plain" id="vhM-hP-Ch2">
-                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="mmi-5f-1s6">
-                                <rect key="frame" x="578" y="7" width="170" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Read Mode"/>
-                                    <segment title="Edit Mode"/>
-                                </segments>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="switchMode:" destination="vb8-CO-tHR" eventType="valueChanged" id="1aR-aI-SGp"/>
-                                </connections>
-                            </segmentedControl>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="UH1-bX-EjM">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="MPF-LB-Y4D">
+                            <rect key="frame" x="299" y="7" width="170" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Read Mode"/>
+                                <segment title="Edit Mode"/>
+                            </segments>
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="switchMode:" destination="vb8-CO-tHR" id="HED-BW-eu3"/>
+                                <action selector="switchMode:" destination="vb8-CO-tHR" eventType="valueChanged" id="syk-HJ-Toy"/>
                             </connections>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Title" id="UH1-bX-EjM"/>
+                        </segmentedControl>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="switchFlag" destination="vhM-hP-Ch2" id="fjh-iV-52Y"/>
                         <segue destination="HcU-Xb-EOB" kind="show" identifier="pagesToPagereader" id="gdF-St-ziy"/>
                         <segue destination="zuV-gA-W6h" kind="show" identifier="pagesToPadeditor" id="b63-6a-EuH"/>
                     </connections>

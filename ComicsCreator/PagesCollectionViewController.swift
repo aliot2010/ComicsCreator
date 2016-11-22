@@ -15,12 +15,13 @@ class PagesCollectionViewController: UICollectionViewController {
     var modeFlag = 0
     var selectedIndex = -1
     
-    @IBOutlet weak var switchFlag: UIBarButtonItem!
+    
 
     
     @IBAction func switchMode(_ sender: UISegmentedControl) {
         if (modeFlag==0){
                         modeFlag = 1
+                        
                     } else {
                         modeFlag = 0
                         let cell = collectionView?.cellForItem(at: IndexPath(item: selectedIndex, section: 0))
