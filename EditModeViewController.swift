@@ -9,7 +9,9 @@
 import UIKit
 
 class EditModeViewController: UIViewController {
-
+    
+    var pageIndex = 0
+    var comicsIndex = 0
     var viewInEditPlace:ImagePageView? = nil
     @IBOutlet weak var editPlace: UIView!
     var viewEditPlaceholder:UIView?
@@ -17,13 +19,14 @@ class EditModeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewInEditPlace = ImagePageView() as ImagePageView
-        (viewInEditPlace)?.initSubviews(nibName: "DualImagePageView1")
+        (viewInEditPlace)?.initSubviews(nibName: "DualImagePageView", comicsIndex: 1, pageIndex: 1)//
         viewInEditPlace?.frame = editPlace.bounds
         editPlace.addSubview(viewInEditPlace!)
         
         
         viewInEditPlace?.setImage(toImageView: UIImage(named: "rozhicy_cherno_beloe_nadpisi_1920x1200")!, toIndex: 0)
         
+        viewInEditPlace?.imageView2.center = CGPoint(x:  200, y: 100)
         
     }
 

@@ -15,7 +15,8 @@ class ImagePageView: UIView {
     
     @IBOutlet weak var imageView2: UIImageView!
     @IBOutlet weak var imageView1: UIImageView!
-    
+    var comicsIndex:Int = -1
+    var pageIndex:Int = -1
     
     
     
@@ -52,8 +53,12 @@ class ImagePageView: UIView {
     }
     
     
-    func initSubviews(nibName:String) {
-       
+    func initSubviews(nibName:String, comicsIndex:Int, pageIndex:Int) {
+        self.comicsIndex = comicsIndex
+        self.pageIndex = pageIndex
+        
+        
+        
         let nib = UINib(nibName: nibName, bundle: nil)
       
         
@@ -79,6 +84,32 @@ class ImagePageView: UIView {
             imageViewList[i].contentMode = UIViewContentMode.scaleAspectFill
         }
     }
+    
+    
+    @IBAction func panGestRecognizer(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: sender.view)
+        if let view = sender.view {
+            
+            view.center = CGPoint(x:view.center.x + translation.x,
+                                  y:view.center.y + translation.y)
+        }
+        sender.setTranslation(CGPoint.zero, in: sender.view)
+    }
+    
+    @IBAction func pinchRecognizer(_ sender: UIPinchGestureRecognizer) {
+        if let view = sender.view {
+            view.transform = view.transform.scaledBy(x: sender.scale, y: sender.scale)
+            sender.scale = 1
+        }
+    }
+    
+    @IBAction func rotationRecognizer(_ sender: UIRotationGestureRecognizer) {
+        if let view = sender.view {
+            view.transform = view.transform.rotated(by: sender.rotation)
+            sender.rotation = 0
+        }
+    }
+
     
 
 }

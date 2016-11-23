@@ -97,6 +97,17 @@ class PagesCollectionViewController: UICollectionViewController {
         cell?.backgroundColor = UIColor.clear
     }
    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender:sender)
+        guard segue.identifier == "pagesToPagereader" else {return}
+        guard let pageVC = segue.destination as? EditModeViewController else {
+            return
+        }
+        pageVC.pageIndex = sender as! Int
+        pageVC.comicsIndex = self.index
+    }
+    
+    
     func openPageInReadMode(byIndex:Int){
         self.performSegue(withIdentifier: "pagesToPagereader", sender: selectedIndex)
 
