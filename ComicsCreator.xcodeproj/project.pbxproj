@@ -21,7 +21,7 @@
 		FA1D7B4E1DE45FFF006F658B /* SingleImagePageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D7B4D1DE45FFF006F658B /* SingleImagePageView.xib */; };
 		FA1D7B521DE46293006F658B /* DualImagePageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D7B511DE46293006F658B /* DualImagePageView.xib */; };
 		FA1D7B541DE4650C006F658B /* DualImagePageView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D7B531DE4650C006F658B /* DualImagePageView1.xib */; };
-		FA1D7B561DE47904006F658B /* DualImagePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D7B551DE47904006F658B /* DualImagePageView.swift */; };
+		FA1D7B561DE47904006F658B /* ImagePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D7B551DE47904006F658B /* ImagePageView.swift */; };
 		FA1D7B591DE47D32006F658B /* EditModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D7B581DE47D32006F658B /* EditModeViewController.swift */; };
 		FA30D75D1DDE1C1400E57659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA30D75B1DDE1C1400E57659 /* Main.storyboard */; };
 		FA30D75F1DDE20B000E57659 /* CreateComicsCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30D75E1DDE20B000E57659 /* CreateComicsCover.swift */; };
@@ -47,7 +47,7 @@
 		FA1D7B4D1DE45FFF006F658B /* SingleImagePageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleImagePageView.xib; sourceTree = "<group>"; };
 		FA1D7B511DE46293006F658B /* DualImagePageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DualImagePageView.xib; sourceTree = "<group>"; };
 		FA1D7B531DE4650C006F658B /* DualImagePageView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DualImagePageView1.xib; sourceTree = "<group>"; };
-		FA1D7B551DE47904006F658B /* DualImagePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DualImagePageView.swift; sourceTree = "<group>"; };
+		FA1D7B551DE47904006F658B /* ImagePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePageView.swift; sourceTree = "<group>"; };
 		FA1D7B581DE47D32006F658B /* EditModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditModeViewController.swift; sourceTree = "<group>"; };
 		FA30D75C1DDE1C1400E57659 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA30D75E1DDE20B000E57659 /* CreateComicsCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateComicsCover.swift; sourceTree = "<group>"; };
@@ -154,7 +154,7 @@
 				FA1D7B4D1DE45FFF006F658B /* SingleImagePageView.xib */,
 				FA1D7B511DE46293006F658B /* DualImagePageView.xib */,
 				FA1D7B531DE4650C006F658B /* DualImagePageView1.xib */,
-				FA1D7B551DE47904006F658B /* DualImagePageView.swift */,
+				FA1D7B551DE47904006F658B /* ImagePageView.swift */,
 			);
 			name = Patterns;
 			sourceTree = "<group>";
@@ -306,7 +306,7 @@
 				FA0725B31DDDB7820093C37F /* CollectionViewCell.swift in Sources */,
 				FA0725961DDD9FC60093C37F /* AppDelegate.swift in Sources */,
 				FA0B1F091DE0705A000B1D22 /* PagesCollectionViewController.swift in Sources */,
-				FA1D7B561DE47904006F658B /* DualImagePageView.swift in Sources */,
+				FA1D7B561DE47904006F658B /* ImagePageView.swift in Sources */,
 				FA1D7B591DE47D32006F658B /* EditModeViewController.swift in Sources */,
 				FA0B1F0B1DE07279000B1D22 /* Page.swift in Sources */,
 				FA30D75F1DDE20B000E57659 /* CreateComicsCover.swift in Sources */,

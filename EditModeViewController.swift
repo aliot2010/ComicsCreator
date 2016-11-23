@@ -10,16 +10,21 @@ import UIKit
 
 class EditModeViewController: UIViewController {
 
+    var viewInEditPlace:ImagePageView? = nil
     @IBOutlet weak var editPlace: UIView!
     var viewEditPlaceholder:UIView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let view = DualImagePageView()
-        view.initSubviews(nibName: "DualImagePageView")
+        viewInEditPlace = ImagePageView() as ImagePageView
+        (viewInEditPlace)?.initSubviews(nibName: "DualImagePageView1")
+        viewInEditPlace?.frame = editPlace.bounds
+        editPlace.addSubview(viewInEditPlace!)
         
-        view.frame = editPlace.bounds
         
-        editPlace.addSubview(view)
+        viewInEditPlace?.setImage(toImageView: UIImage(named: "rozhicy_cherno_beloe_nadpisi_1920x1200")!, toIndex: 0)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
