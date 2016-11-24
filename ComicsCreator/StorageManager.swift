@@ -18,8 +18,9 @@ class Storage{
     
     required init() {
         comicsList = realm.objects(Comics.self)
+       
     }
-    
+  
     func addNewComix(comix : Comics){
         try! realm.write {
             realm.add(comix)

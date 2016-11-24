@@ -11,14 +11,16 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class AddCoverCollectionViewController: UICollectionViewController {
-    var pageIndex = 1
+    
     var comicsIndex = 1
     var comixPatternsImages = [UIImage(named: "single"), UIImage(named: "dual"), UIImage(named: "dual1")]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "rozhicy_cherno_beloe_nadpisi_1920x1200" )!)
         // Do any additional setup after loading the view, typically from a nib.
+        //testLabel.text = String(pageIndex)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,12 +61,29 @@ class AddCoverCollectionViewController: UICollectionViewController {
         pageVC.index = sender as! Int
     }
     
+    
+    let numberOfImages:[Int:Int] = [0:1, 1:2, 2:2]
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-                let page = Page()
-                page.pattern = indexPath.row
+        let page = Page()
+        
+//        try! Storage.common.realm.write {
+//            Storage.common.comicsList[0].pages[0].images.append(Image())//TODO
+//            Storage.common.comicsList[0].pages[0].images[0].imagePath = "defoultImage"
+//        }
+       
+        page.pattern = indexPath.row
                 try! Storage.common.realm.write {
                     Storage.common.comicsList[comicsIndex].pages.append(page)
-                }
+                    for i in 0..<Int(numberOfImages[indexPath.row]!){
+                        let  image = Image()
+                        image.imagePath = "defoultImage"
+                        Storage.common.comicsList[comicsIndex].pages[indexPath.row].images.append(image)
+                        
+                    }
+                    
+        }
+        
+        
         self.performSegue(withIdentifier: "addCoverToPagesColection", sender:comicsIndex)
     }
     

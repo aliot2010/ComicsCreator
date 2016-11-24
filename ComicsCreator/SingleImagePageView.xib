@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImagePageView" customModule="RealmSwift">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Dni-CS-fI0"/>
+                <outlet property="eeditView1" destination="LhU-Dp-Kdm" id="mci-9G-bkw"/>
                 <outlet property="imageView1" destination="eUb-em-PWy" id="zgV-7l-qht"/>
             </connections>
         </placeholder>

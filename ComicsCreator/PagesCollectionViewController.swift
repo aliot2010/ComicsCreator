@@ -34,6 +34,8 @@ class PagesCollectionViewController: UICollectionViewController {
     
     @IBAction func editPageClicked(_ sender: UIBarButtonItem) {
         if (modeFlag == 1){
+            let cell = collectionView?.cellForItem(at: IndexPath(item: selectedIndex, section: 0))
+            cell?.backgroundColor = UIColor.clear
             self.performSegue(withIdentifier: "pagesToPadeditor", sender: selectedIndex)
         }
     }
@@ -103,13 +105,7 @@ class PagesCollectionViewController: UICollectionViewController {
     }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        super.prepare(for: segue, sender:sender)
-//        guard segue.identifier == "pagesToPadeditor" else {return}
-//        guard let pageVC = segue.destination as? EditModeViewController else {
-//            return
-//        }
-//        pageVC.pageIndex = sender as! Int
-//        pageVC.comicsIndex = self.index
+
         
         super.prepare(for: segue, sender:sender)
         if segue.identifier == "pagesToPadeditor"{

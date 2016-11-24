@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 class ImagePageView: UIView {
 
     var numberOfImage = 0
@@ -47,6 +47,13 @@ class ImagePageView: UIView {
         }
     }
     
+    func updateImages(){//
+        for i in 0..<numberOfImage{
+        
+            let img =  Storage.common.comicsList[0].pages[0].images[0].imagePath
+            currentImageViewList[i].image = Storage.common.loadImage(imageName: img)
+        }
+    }
     
     
     
@@ -82,6 +89,11 @@ class ImagePageView: UIView {
         
         createImageViewList()
         setNumberOfImageView(nibName: nibName)
+        updateImages()
+    }
+    
+    func  getSelectedViewIndex()->Int{
+        return selectedIndex
     }
     
     private func createImageViewList(){

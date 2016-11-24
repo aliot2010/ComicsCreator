@@ -36,7 +36,7 @@
         <scene sceneID="mFB-gs-UFO">
             <objects>
                 <collectionViewController id="exw-ii-WBx" customClass="ViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ojk-8b-VHp">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="ojk-8b-VHp">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.3568299412727356" green="0.3568844199180603" blue="0.35681277513504028" alpha="0.42554045376712329" colorSpace="custom" customColorSpace="sRGB"/>
@@ -113,7 +113,7 @@
         <scene sceneID="2dq-Iu-BIs">
             <objects>
                 <collectionViewController id="vb8-CO-tHR" customClass="PagesCollectionViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="lO4-Ig-fPm">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="lO4-Ig-fPm">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -213,7 +213,7 @@
         <scene sceneID="NxH-r9-V4h">
             <objects>
                 <collectionViewController id="a1H-dh-RWV" customClass="AddCoverCollectionViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="42R-xk-Yod">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="42R-xk-Yod">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -296,6 +296,9 @@
                                         <rect key="frame" x="54" y="18" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="photos"/>
+                                        <connections>
+                                            <action selector="setImageButtonClicked:" destination="zuV-gA-W6h" eventType="touchUpInside" id="NpL-Yd-Ij1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Er-Jl-yQw">
                                         <rect key="frame" x="184" y="13" width="60" height="60"/>
@@ -415,7 +418,7 @@
         <image name="thought-bubble" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Wsi-Tl-R74"/>
-        <segue reference="dOc-vt-swv"/>
+        <segue reference="gfc-mR-wpf"/>
+        <segue reference="i3a-if-Yqu"/>
     </inferredMetricsTieBreakers>
 </document>

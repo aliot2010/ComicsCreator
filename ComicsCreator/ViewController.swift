@@ -9,10 +9,11 @@
 import UIKit
 
 class ViewController: UICollectionViewController {
-    
+    public let documentsDirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setDefoultPhoto()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "rozhicy_cherno_beloe_nadpisi_1920x1200" )!)
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -41,6 +42,9 @@ class ViewController: UICollectionViewController {
         cell.label.text = Storage.common.comicsList[indexPath.row].title
         cell.image.contentMode = UIViewContentMode.scaleAspectFill
         cell.image.image = Storage.common.loadImage(imageName: Storage.common.comicsList[indexPath.row].cover)
+       
+
+        //cell.image.image = Storage.common.loadImage(imageName: "defoultPhoto")
         return cell
         
         
@@ -58,7 +62,12 @@ class ViewController: UICollectionViewController {
         self.performSegue(withIdentifier: "mainToItem", sender:indexPath.row)
     }
     
-
+    func setDefoultPhoto(){
+        let photoURL = NSURL(fileURLWithPath: documentsDirPath).appendingPathComponent("defoultPhoto")
+        let data = UIImagePNGRepresentation(UIImage(named: "defoultPhoto")!)
+        try! data?.write(to: photoURL!, options: Data.WritingOptions.atomic)
+    }
+    
 
 }
 
