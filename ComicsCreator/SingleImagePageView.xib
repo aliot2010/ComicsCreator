@@ -22,7 +22,7 @@
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LhU-Dp-Kdm">
                     <rect key="frame" x="0.0" y="0.0" width="728" height="821"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
                         <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tIv-bq-muT">
                             <rect key="frame" x="7" y="7" width="713" height="806"/>

@@ -64,6 +64,7 @@ class ImagePageView: UIView {
         
         nib.instantiate(withOwner: self, options: nil)
         contentView.frame = bounds
+        //contentView.contentMode = UIViewContentMode.scaleAspectFill
         addSubview(contentView)
         
         createImageViewList()

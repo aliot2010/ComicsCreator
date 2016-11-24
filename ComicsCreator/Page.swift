@@ -9,5 +9,6 @@
 import UIKit
 import RealmSwift
 class Page: Object {
-    
+    dynamic var pattern = 0
+    var images = List<Image>()
 }

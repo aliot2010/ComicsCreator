@@ -36,7 +36,7 @@
         <scene sceneID="mFB-gs-UFO">
             <objects>
                 <collectionViewController id="exw-ii-WBx" customClass="ViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ojk-8b-VHp">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="ojk-8b-VHp">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.3568299412727356" green="0.3568844199180603" blue="0.35681277513504028" alpha="0.42554045376712329" colorSpace="custom" customColorSpace="sRGB"/>
@@ -179,6 +179,7 @@
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addPge:" destination="vb8-CO-tHR" id="jgB-OM-KKo"/>
+                                <segue destination="a1H-dh-RWV" kind="show" identifier="PagesToAddCover" id="WM0-Gr-hV7"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="za4-dt-uxr"/>
@@ -207,6 +208,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FG4-8a-FYG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1057.8125" y="450.58593749999994"/>
+        </scene>
+        <!--Add Cover Collection View Controller-->
+        <scene sceneID="NxH-r9-V4h">
+            <objects>
+                <collectionViewController id="a1H-dh-RWV" customClass="AddCoverCollectionViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="42R-xk-Yod">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="50" id="diN-6g-dv5">
+                            <size key="itemSize" width="120" height="169"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="40" minY="40" maxX="40" maxY="240"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Uqn-pF-0X0" customClass="CollectionViewCell" customModule="ComicsCreator" customModuleProvider="target">
+                                <rect key="frame" x="40" y="40" width="120" height="169"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="169"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mhr-Y0-VsA">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="169"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XgA-C1-6il">
+                                                    <rect key="frame" x="8" y="8" width="104" height="153"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </view>
+                                    </subviews>
+                                </view>
+                                <size key="customSize" width="120" height="169"/>
+                                <connections>
+                                    <outlet property="image" destination="XgA-C1-6il" id="cP1-Cf-zrn"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="a1H-dh-RWV" id="FUR-N0-sxa"/>
+                            <outlet property="delegate" destination="a1H-dh-RWV" id="ZfH-Cu-T6m"/>
+                        </connections>
+                    </collectionView>
+                    <connections>
+                        <segue destination="vb8-CO-tHR" kind="show" identifier="addCoverToPagesColection" id="i3a-if-Yqu"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iKU-9i-FPD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="272" y="1158"/>
         </scene>
         <!--ReadMode-->
         <scene sceneID="Pd6-LK-xiZ">
@@ -238,18 +293,33 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SwJ-cD-T7W">
+                                <rect key="frame" x="54" y="951" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsd-i5-pLE">
+                                <rect key="frame" x="265" y="951" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Mode" id="7HW-Lh-PAo"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="editPlace" destination="cMY-ZV-dAL" id="6dI-if-cp2"/>
+                        <outlet property="testcomixind" destination="SwJ-cD-T7W" id="XZf-PY-JEi"/>
+                        <outlet property="textpageIndex" destination="Tsd-i5-pLE" id="we7-Yx-GhO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faO-vz-632" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1877" y="1136"/>
+            <point key="canvasLocation" x="1880" y="1158"/>
         </scene>
         <!--Start Page View Controller-->
         <scene sceneID="Zbt-5G-hNM">
@@ -323,13 +393,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="puE-ic-bxD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="915.625" y="-412.5"/>
+            <point key="canvasLocation" x="1058" y="-414"/>
         </scene>
     </scenes>
     <resources>
         <image name="1366564980_919021232" width="675" height="1024"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dOc-vt-swv"/>
+        <segue reference="i3a-if-Yqu"/>
+        <segue reference="gfc-mR-wpf"/>
     </inferredMetricsTieBreakers>
 </document>

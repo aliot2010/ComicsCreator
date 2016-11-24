@@ -39,11 +39,11 @@ class PagesCollectionViewController: UICollectionViewController {
     }
     
     @IBAction func addPge(_ sender: UIBarButtonItem) {
-        let page = Page()
-        try! Storage.common.realm.write {
-            Storage.common.comicsList[index].pages.append(page)
-        }
-        self.collectionView?.reloadData()
+//        let page = Page()
+//        try! Storage.common.realm.write {
+//            Storage.common.comicsList[index].pages.append(page)
+//        }
+//        self.collectionView?.reloadData()
         }
 
     override func viewDidLoad() {
@@ -70,7 +70,8 @@ class PagesCollectionViewController: UICollectionViewController {
         
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        
+        cell.image.image = Tools.comixPatternsImages[Storage.common.comicsList[index].pages[indexPath.row].pattern]
+        //говно?
         cell.label.text = String(indexPath.row + 1)
         return cell
         
@@ -98,13 +99,25 @@ class PagesCollectionViewController: UICollectionViewController {
     }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        super.prepare(for: segue, sender:sender)
+//        guard segue.identifier == "pagesToPadeditor" else {return}
+//        guard let pageVC = segue.destination as? EditModeViewController else {
+//            return
+//        }
+//        pageVC.pageIndex = sender as! Int
+//        pageVC.comicsIndex = self.index
+        
         super.prepare(for: segue, sender:sender)
-        guard segue.identifier == "pagesToPagereader" else {return}
-        guard let pageVC = segue.destination as? EditModeViewController else {
-            return
+        if segue.identifier == "pagesToPadeditor"{
+            guard let pageVC = segue.destination as? EditModeViewController else {return}
+                    pageVC.pageIndex = sender as! Int
+                    pageVC.comicsIndex = self.index
+        } else if segue.identifier == "PagesToAddCover"{
+            guard let pageVC = segue.destination as? AddCoverCollectionViewController else {return}
+            
+            pageVC.comicsIndex = self.index
         }
-        pageVC.pageIndex = sender as! Int
-        pageVC.comicsIndex = self.index
+        
     }
     
     

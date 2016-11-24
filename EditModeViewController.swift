@@ -9,17 +9,20 @@
 import UIKit
 
 class EditModeViewController: UIViewController {
+    @IBOutlet weak var textpageIndex: UILabel!
     
-    var pageIndex = 0
-    var comicsIndex = 0
+    @IBOutlet weak var testcomixind: UILabel!
+    var pageIndex = 1
+    var comicsIndex = 1
     var viewInEditPlace:ImagePageView? = nil
     @IBOutlet weak var editPlace: UIView!
     var viewEditPlaceholder:UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         viewInEditPlace = ImagePageView() as ImagePageView
-        (viewInEditPlace)?.initSubviews(nibName: "DualImagePageView", comicsIndex: 1, pageIndex: 1)//
+        (viewInEditPlace)?.initSubviews(nibName: "DualImagePageView", comicsIndex: comicsIndex, pageIndex: pageIndex)//
         viewInEditPlace?.frame = editPlace.bounds
         editPlace.addSubview(viewInEditPlace!)
         
@@ -27,6 +30,9 @@ class EditModeViewController: UIViewController {
         viewInEditPlace?.setImage(toImageView: UIImage(named: "rozhicy_cherno_beloe_nadpisi_1920x1200")!, toIndex: 0)
         
         viewInEditPlace?.imageView2.center = CGPoint(x:  200, y: 100)
+        
+        textpageIndex.text = String(pageIndex)
+        testcomixind.text = String(comicsIndex)
         
     }
 

@@ -9,6 +9,8 @@
 import UIKit
 
 class Tools: NSObject {
+    
+    public static var comixPatternsImages = [UIImage(named: "single"), UIImage(named: "dual"), UIImage(named: "dual1")]
     public static func getTimeAsString()->String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yy-hh-mm-ss-SSS"
