@@ -13,6 +13,7 @@ private let reuseIdentifier = "Cell"
 class AddCoverCollectionViewController: UICollectionViewController {
     
     var comicsIndex = 1
+    var pageIndex = -1
     var comixPatternsImages = [UIImage(named: "single"), UIImage(named: "dual"), UIImage(named: "dual1")]
     
     
@@ -66,10 +67,6 @@ class AddCoverCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let page = Page()
         
-//        try! Storage.common.realm.write {
-//            Storage.common.comicsList[0].pages[0].images.append(Image())//TODO
-//            Storage.common.comicsList[0].pages[0].images[0].imagePath = "defoultImage"
-//        }
        
         page.pattern = indexPath.row
                 try! Storage.common.realm.write {
@@ -77,7 +74,7 @@ class AddCoverCollectionViewController: UICollectionViewController {
                     for i in 0..<Int(numberOfImages[indexPath.row]!){
                         let  image = Image()
                         image.imagePath = "defoultImage"
-                        Storage.common.comicsList[comicsIndex].pages[indexPath.row].images.append(image)
+                        Storage.common.comicsList[comicsIndex].pages[Storage.common.comicsList[comicsIndex].pages.count - 1].images.append(image)
                         
                     }
                     

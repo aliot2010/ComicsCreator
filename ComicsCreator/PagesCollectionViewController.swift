@@ -116,6 +116,7 @@ class PagesCollectionViewController: UICollectionViewController {
             guard let pageVC = segue.destination as? AddCoverCollectionViewController else {return}
             
             pageVC.comicsIndex = self.index
+            
         }
         
     }
