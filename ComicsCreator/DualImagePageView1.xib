@@ -12,6 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImagePageView" customModule="ComicsCreator" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="xOY-jK-aeR"/>
+                <outlet property="editView2" destination="kWn-N7-lFm" id="C3h-o3-vn3"/>
+                <outlet property="eeditView1" destination="QJU-3s-Aqh" id="9CN-AG-9g6"/>
                 <outlet property="imageView1" destination="rSs-3o-urK" id="Tyh-d6-t9K"/>
                 <outlet property="imageView2" destination="mUa-7d-uiX" id="1B8-Ut-v5n"/>
             </connections>
@@ -38,6 +40,10 @@
                         </view>
                     </subviews>
                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="MZv-X4-GTc" appends="YES" id="5oE-5W-NwV"/>
+                    </connections>
                 </view>
                 <view clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QJU-3s-Aqh">
                     <rect key="frame" x="0.0" y="0.0" width="364" height="821"/>
@@ -56,6 +62,10 @@
                         </view>
                     </subviews>
                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="1KN-Q4-NTe" appends="YES" id="pPv-EP-27B"/>
+                    </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,6 +75,16 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="25" y="51.5"/>
         </view>
+        <tapGestureRecognizer id="1KN-Q4-NTe">
+            <connections>
+                <action selector="tapRecognizer:" destination="-1" id="Hxs-KI-7L1"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="MZv-X4-GTc">
+            <connections>
+                <action selector="tapRecognizer:" destination="-1" id="yck-Rk-SdG"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="1366564980_919021232" width="675" height="1024"/>

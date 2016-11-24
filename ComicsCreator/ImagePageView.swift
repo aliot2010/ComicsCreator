@@ -13,13 +13,24 @@ class ImagePageView: UIView {
     var numberOfImage = 0
     @IBOutlet var contentView: UIView!
     
+    var selectedIndex = 0
+    
+    
+    @IBOutlet weak var eeditView1: UIView!
+    @IBOutlet weak var editView2: UIView!
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var imageView2: UIImageView!
     @IBOutlet weak var imageView1: UIImageView!
     var comicsIndex:Int = -1
     var pageIndex:Int = -1
     
     
-    
+    var editViewList = [UIView]()
     var imageViewList = [UIImageView]()
     var currentImageViewList = [UIImageView]()
     let namesOfNib: [String: Int] = ["DualImagePageView":2, "SingleImagePageView":1, "DualImagePageView1":2 ]
@@ -35,6 +46,8 @@ class ImagePageView: UIView {
             currentImageViewList[toIndex].image = image
         }
     }
+    
+    
     
     
     
@@ -73,8 +86,11 @@ class ImagePageView: UIView {
     
     private func createImageViewList(){
         imageViewList.append(imageView1)
+        editViewList.append(eeditView1)
+        eeditView1.backgroundColor = UIColor.orange
         if (imageView2 != nil){
             imageViewList.append(imageView2)
+            editViewList.append(editView2)
         }
     }
     
@@ -85,6 +101,23 @@ class ImagePageView: UIView {
             imageViewList[i].contentMode = UIViewContentMode.scaleAspectFill
         }
     }
+    
+    
+    @IBAction func tapRecognizer(_ sender: UITapGestureRecognizer) {
+        for i in 0..<numberOfImage{
+           
+            
+            if(sender.view?.isEqual(editViewList[i]))!{
+                editViewList[selectedIndex].backgroundColor = UIColor.black
+                editViewList[i].backgroundColor = UIColor.orange
+                selectedIndex = i
+                break
+            }
+        }
+        //editViewList[1].backgroundColor = UIColor.blue
+    }
+    
+    
     
     
     @IBAction func panGestRecognizer(_ sender: UIPanGestureRecognizer) {

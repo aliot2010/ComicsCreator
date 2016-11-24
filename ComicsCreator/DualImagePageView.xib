@@ -12,6 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImagePageView" customModule="ComicsCreator" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="M24-4k-LzV"/>
+                <outlet property="editView2" destination="9vd-gH-M1b" id="1zJ-Tb-Eqx"/>
+                <outlet property="eeditView1" destination="p56-lh-0FJ" id="PdJ-S7-ucm"/>
                 <outlet property="imageView1" destination="rvz-rx-pZO" id="ZW0-4u-00K"/>
                 <outlet property="imageView2" destination="BSW-WL-xfB" id="dbP-jQ-C88"/>
             </connections>
@@ -44,17 +46,21 @@
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="fSC-Mu-bJT" appends="YES" id="2Xr-fC-fU0"/>
+                    </connections>
                 </view>
                 <view clipsSubviews="YES" tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p56-lh-0FJ">
                     <rect key="frame" x="0.0" y="0.0" width="728" height="410"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ntS-Hf-mVK">
-                            <rect key="frame" x="8" y="5" width="712" height="399"/>
+                            <rect key="frame" x="8" y="4" width="712" height="399"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1366564980_919021232" translatesAutoresizingMaskIntoConstraints="NO" id="rvz-rx-pZO">
-                                    <rect key="frame" x="-18" y="0.0" width="712" height="399"/>
+                                    <rect key="frame" x="-20" y="0.0" width="712" height="399"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <gestureRecognizers/>
                                     <connections>
@@ -68,6 +74,10 @@
                         </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="odB-MO-HSf" appends="YES" id="bTd-J1-2uu"/>
+                    </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -107,6 +117,16 @@
                 <action selector="rotationRecognizer:" destination="-1" id="8sC-7l-H7k"/>
             </connections>
         </rotationGestureRecognizer>
+        <tapGestureRecognizer id="odB-MO-HSf">
+            <connections>
+                <action selector="tapRecognizer:" destination="-1" id="DAP-bS-qSg"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="fSC-Mu-bJT">
+            <connections>
+                <action selector="tapRecognizer:" destination="-1" id="8y7-9j-7cF"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="1366564980_919021232" width="675" height="1024"/>

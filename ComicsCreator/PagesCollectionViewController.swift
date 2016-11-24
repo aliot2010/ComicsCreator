@@ -38,6 +38,10 @@ class PagesCollectionViewController: UICollectionViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.collectionView?.reloadData()
+    }
+    
     @IBAction func addPge(_ sender: UIBarButtonItem) {
 //        let page = Page()
 //        try! Storage.common.realm.write {

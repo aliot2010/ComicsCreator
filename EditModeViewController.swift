@@ -14,6 +14,7 @@ class EditModeViewController: UIViewController {
     @IBOutlet weak var testcomixind: UILabel!
     var pageIndex = 1
     var comicsIndex = 1
+    
     var viewInEditPlace:ImagePageView? = nil
     @IBOutlet weak var editPlace: UIView!
     var viewEditPlaceholder:UIView?
@@ -22,17 +23,10 @@ class EditModeViewController: UIViewController {
         super.viewDidLoad()
         
         viewInEditPlace = ImagePageView() as ImagePageView
-        (viewInEditPlace)?.initSubviews(nibName: "DualImagePageView", comicsIndex: comicsIndex, pageIndex: pageIndex)//
+        (viewInEditPlace)?.initSubviews(nibName:Tools.comicsPatternsById[Storage.common.comicsList[comicsIndex].pages[pageIndex].pattern] , comicsIndex: comicsIndex, pageIndex: pageIndex)//
         viewInEditPlace?.frame = editPlace.bounds
         editPlace.addSubview(viewInEditPlace!)
         
-        
-        viewInEditPlace?.setImage(toImageView: UIImage(named: "rozhicy_cherno_beloe_nadpisi_1920x1200")!, toIndex: 0)
-        
-        viewInEditPlace?.imageView2.center = CGPoint(x:  200, y: 100)
-        
-        textpageIndex.text = String(pageIndex)
-        testcomixind.text = String(comicsIndex)
         
     }
 
