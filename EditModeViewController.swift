@@ -51,6 +51,12 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
             //imageView.contentMode = .scaleAspectFit
             viewInEditPlace?.imageViewList[ind].image = pickedImage
             viewInEditPlace?.imageViewList[ind].contentMode = UIViewContentMode.scaleAspectFill
+            try! Storage.common.realm.write {
+                Storage.common.comicsList[comicsIndex].pages[pageIndex].images[(viewInEditPlace?.getSelectedViewIndex())!].imagePath = Storage.common.saveImage(image: pickedImage)
+                
+            }
+           // currentImageViewList[i].image = Storage.common.loadImage(imageName: img)
+            
      
         }
         dismiss(animated: true, completion: nil)

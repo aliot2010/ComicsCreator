@@ -42,7 +42,9 @@ class PagesCollectionViewController: UICollectionViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         self.collectionView?.reloadData()
-    }
+      
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+            }
     
     @IBAction func addPge(_ sender: UIBarButtonItem) {
 //        let page = Page()

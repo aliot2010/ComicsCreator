@@ -50,8 +50,8 @@ class ImagePageView: UIView {
     func updateImages(){//
         for i in 0..<numberOfImage{
         
-            let img =  Storage.common.comicsList[0].pages[0].images[0].imagePath
-            currentImageViewList[i].image = Storage.common.loadImage(imageName: img)
+            let img =  Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].imagePath
+            currentImageViewList[i].image = Storage.common.loadImage(imageName: img)//
         }
     }
     
