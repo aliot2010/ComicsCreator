@@ -31,9 +31,14 @@
                             <rect key="frame" x="6" y="6" width="353" height="809"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1366564980_919021232" translatesAutoresizingMaskIntoConstraints="NO" id="mUa-7d-uiX">
+                                <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1366564980_919021232" translatesAutoresizingMaskIntoConstraints="NO" id="mUa-7d-uiX">
                                     <rect key="frame" x="0.0" y="0.0" width="353" height="817"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="bGn-X4-Mz3" appends="YES" id="M1a-wF-mge"/>
+                                        <outletCollection property="gestureRecognizers" destination="Fbg-FR-MTp" appends="YES" id="QIZ-LK-Myb"/>
+                                    </connections>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -53,9 +58,14 @@
                             <rect key="frame" x="5" y="6" width="353" height="809"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="im2" image="1366564980_919021232" translatesAutoresizingMaskIntoConstraints="NO" id="rSs-3o-urK">
+                                <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="im2" image="1366564980_919021232" translatesAutoresizingMaskIntoConstraints="NO" id="rSs-3o-urK">
                                     <rect key="frame" x="0.0" y="0.0" width="353" height="820"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="wvX-On-KcU" appends="YES" id="Mxx-9h-Vqp"/>
+                                        <outletCollection property="gestureRecognizers" destination="U56-gr-A5v" appends="YES" id="Ytx-OS-LF1"/>
+                                    </connections>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,6 +95,26 @@
                 <action selector="tapRecognizer:" destination="-1" id="yck-Rk-SdG"/>
             </connections>
         </tapGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="wvX-On-KcU">
+            <connections>
+                <action selector="panGestRecognizer:" destination="-1" id="Hpp-3T-grb"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="bGn-X4-Mz3">
+            <connections>
+                <action selector="panGestRecognizer:" destination="-1" id="FHR-WP-0WA"/>
+            </connections>
+        </panGestureRecognizer>
+        <rotationGestureRecognizer id="U56-gr-A5v">
+            <connections>
+                <action selector="rotationRecognizer:" destination="-1" id="3BM-oa-uJK"/>
+            </connections>
+        </rotationGestureRecognizer>
+        <rotationGestureRecognizer id="Fbg-FR-MTp">
+            <connections>
+                <action selector="rotationRecognizer:" destination="-1" id="NDr-C2-xLL"/>
+            </connections>
+        </rotationGestureRecognizer>
     </objects>
     <resources>
         <image name="1366564980_919021232" width="675" height="1024"/>

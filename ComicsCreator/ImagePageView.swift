@@ -52,6 +52,17 @@ class ImagePageView: UIView {
         
             let img =  Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].imagePath
             currentImageViewList[i].image = Storage.common.loadImage(imageName: img)//
+            
+            let x = Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].imageX
+            let y = Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].imageY
+
+            
+            currentImageViewList[i].transform = (currentImageViewList[i] as UIView).transform.rotated(by: CGFloat(Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].rotation))
+                print(Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].rotation)
+            
+            if (x > -1000.0 && y > -1000.0){
+                currentImageViewList[i].center = CGPoint(x:x, y:y)
+            }
         }
     }
     
@@ -76,15 +87,10 @@ class ImagePageView: UIView {
     func initSubviews(nibName:String, comicsIndex:Int, pageIndex:Int) {
         self.comicsIndex = comicsIndex
         self.pageIndex = pageIndex
-        
-        
-        
         let nib = UINib(nibName: nibName, bundle: nil)
       
-        
         nib.instantiate(withOwner: self, options: nil)
         contentView.frame = bounds
-        //contentView.contentMode = UIViewContentMode.scaleAspectFill
         addSubview(contentView)
         
         createImageViewList()
@@ -111,6 +117,9 @@ class ImagePageView: UIView {
         for i in 0 ..< Int(namesOfNib[nibName]!){
             currentImageViewList.append(imageViewList[i])
             imageViewList[i].contentMode = UIViewContentMode.scaleAspectFill
+            //print(imageViewList[i].center.x)
+             //print(imageViewList[i].center.y)
+            //imageViewList[i].center = CGPoint(x:-1000, y:-1000)//
         }
     }
     
@@ -135,9 +144,18 @@ class ImagePageView: UIView {
     @IBAction func panGestRecognizer(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: sender.view)
         if let view = sender.view {
-            
-            view.center = CGPoint(x:view.center.x + translation.x,
-                                  y:view.center.y + translation.y)
+           
+                view.center = CGPoint(x:view.center.x + translation.x,
+                                      y:view.center.y + translation.y)
+            for i in 0..<numberOfImage{
+                if(currentImageViewList[i].isEqual(view)){
+                    try! Storage.common.realm.write {
+                        Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].imageX = Double(view.center.x) + Double(translation.x)
+                        Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].imageY = Double(view.center.y) + Double(translation.y)
+                    }
+                    break
+                }
+            }
         }
         sender.setTranslation(CGPoint.zero, in: sender.view)
     }
@@ -152,8 +170,19 @@ class ImagePageView: UIView {
     @IBAction func rotationRecognizer(_ sender: UIRotationGestureRecognizer) {
         if let view = sender.view {
             view.transform = view.transform.rotated(by: sender.rotation)
+            
+            for i in 0..<numberOfImage{
+                if(currentImageViewList[i].isEqual(sender.view)){
+                    try! Storage.common.realm.write {
+                        Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].rotation = Double(Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].rotation + Double(sender.rotation))
+                    }
+                    break
+                }
+            }
+           
             sender.rotation = 0
         }
+        
     }
 
     
