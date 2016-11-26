@@ -55,6 +55,11 @@ class ImagePageView: UIView {
             
             let x = Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].imageX
             let y = Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].imageY
+            
+            let scaleX = Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].scaleX
+            let scaleY = Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].scaleY
+            
+            currentImageViewList[i].transform = (currentImageViewList[i] as UIView).transform.scaledBy(x: CGFloat(scaleX), y: CGFloat(scaleY))
 
             
             currentImageViewList[i].transform = (currentImageViewList[i] as UIView).transform.rotated(by: CGFloat(Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].rotation))
@@ -163,6 +168,19 @@ class ImagePageView: UIView {
     @IBAction func pinchRecognizer(_ sender: UIPinchGestureRecognizer) {
         if let view = sender.view {
             view.transform = view.transform.scaledBy(x: sender.scale, y: sender.scale)
+            print(sender.scale)
+            for i in 0..<numberOfImage{
+                if(currentImageViewList[i].isEqual(sender.view)){
+                    try! Storage.common.realm.write {
+                        Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].scaleX = Double(Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].scaleX * Double(sender.scale))
+                          Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].scaleY = Double(Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].scaleY * Double(sender.scale))
+                    }
+                    break
+                }
+            }
+            
+            
+            
             sender.scale = 1
         }
     }

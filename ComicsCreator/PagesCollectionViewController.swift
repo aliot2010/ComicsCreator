@@ -33,7 +33,7 @@ class PagesCollectionViewController: UICollectionViewController {
     
     
     @IBAction func editPageClicked(_ sender: UIBarButtonItem) {
-        if (modeFlag == 1){
+        if (modeFlag == 1 && selectedIndex != -1){
             let cell = collectionView?.cellForItem(at: IndexPath(item: selectedIndex, section: 0))
             cell?.backgroundColor = UIColor.clear
             self.performSegue(withIdentifier: "pagesToPadeditor", sender: selectedIndex)
