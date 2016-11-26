@@ -13,6 +13,8 @@
 		FA07259D1DDD9FC60093C37F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA07259C1DDD9FC60093C37F /* Assets.xcassets */; };
 		FA0725A01DDD9FC60093C37F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA07259E1DDD9FC60093C37F /* LaunchScreen.storyboard */; };
 		FA0725B31DDDB7820093C37F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0725B21DDDB7820093C37F /* CollectionViewCell.swift */; };
+		FA0B19801DE9CD4A00120AC3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B197F1DE9CD4A00120AC3 /* CollectionViewController.swift */; };
+		FA0B19851DE9E11600120AC3 /* Boom.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0B19841DE9E11600120AC3 /* Boom.xib */; };
 		FA0B1F021DE05173000B1D22 /* Comics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F011DE05173000B1D22 /* Comics.swift */; };
 		FA0B1F041DE056CB000B1D22 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F031DE056CB000B1D22 /* Tools.swift */; };
 		FA0B1F061DE058B6000B1D22 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F051DE058B6000B1D22 /* StorageManager.swift */; };
@@ -42,6 +44,8 @@
 		FA07259F1DDD9FC60093C37F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA0725A11DDD9FC60093C37F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA0725B21DDDB7820093C37F /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		FA0B197F1DE9CD4A00120AC3 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		FA0B19841DE9E11600120AC3 /* Boom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Boom.xib; sourceTree = "<group>"; };
 		FA0B1F011DE05173000B1D22 /* Comics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comics.swift; sourceTree = "<group>"; };
 		FA0B1F031DE056CB000B1D22 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		FA0B1F051DE058B6000B1D22 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 		FA0725941DDD9FC60093C37F /* ComicsCreator */ = {
 			isa = PBXGroup;
 			children = (
+				FA0B19831DE9E0EB00120AC3 /* BoomImages */,
 				FA1D7B571DE47D04006F658B /* EditMode */,
 				FA1D7B4C1DE45ECA006F658B /* Patterns */,
 				FA0B1F071DE07026000B1D22 /* PagesController */,
@@ -133,6 +138,14 @@
 				FA317B0E1DDDFA3100CAD924 /* CollectionViewModel.swift */,
 			);
 			name = startPage;
+			sourceTree = "<group>";
+		};
+		FA0B19831DE9E0EB00120AC3 /* BoomImages */ = {
+			isa = PBXGroup;
+			children = (
+				FA0B19841DE9E11600120AC3 /* Boom.xib */,
+			);
+			name = BoomImages;
 			sourceTree = "<group>";
 		};
 		FA0B1F001DE05092000B1D22 /* Models */ = {
@@ -172,6 +185,7 @@
 				FA1D7B581DE47D32006F658B /* EditModeViewController.swift */,
 				FA1A31161DE6CEC100770F51 /* AddCoverCollectionViewController.swift */,
 				FA1A31181DE6D69200770F51 /* AddCoverCollectionViewCell.swift */,
+				FA0B197F1DE9CD4A00120AC3 /* CollectionViewController.swift */,
 			);
 			name = EditMode;
 			path = ..;
@@ -247,6 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0B19851DE9E11600120AC3 /* Boom.xib in Resources */,
 				FA1D7B521DE46293006F658B /* DualImagePageView.xib in Resources */,
 				FA30D75D1DDE1C1400E57659 /* Main.storyboard in Resources */,
 				FA1D7B4E1DE45FFF006F658B /* SingleImagePageView.xib in Resources */,
@@ -315,6 +330,7 @@
 				FA0725B31DDDB7820093C37F /* CollectionViewCell.swift in Sources */,
 				FA0725961DDD9FC60093C37F /* AppDelegate.swift in Sources */,
 				FA0B1F091DE0705A000B1D22 /* PagesCollectionViewController.swift in Sources */,
+				FA0B19801DE9CD4A00120AC3 /* CollectionViewController.swift in Sources */,
 				FAD877B21DE759AD009F92DF /* Image.swift in Sources */,
 				FA1A31191DE6D69200770F51 /* AddCoverCollectionViewCell.swift in Sources */,
 				FA1D7B561DE47904006F658B /* ImagePageView.swift in Sources */,

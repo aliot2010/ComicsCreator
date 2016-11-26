@@ -8,7 +8,14 @@
 
 import UIKit
 
-class EditModeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+class EditModeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource  {
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var boomView: UIView!
+    
+    let boomImages = [UIImage(named: "bang"), UIImage(named: "boom-copy"), UIImage(named: "wow")]
+    
+    
     let imagePicker = UIImagePickerController()
  
     var pageIndex = 1
@@ -20,9 +27,21 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var editPlace: UIView!
     var viewEditPlaceholder:UIView?
     
+    @IBAction func bommButtonClicked(_ sender: Any) {
+        boomView.isHidden = false
+    }
+    
+    
+    @IBAction func boomBackButtonClicked(_ sender: UIButton) {
+        boomView.isHidden = true
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        
+        
         
         viewInEditPlace = ImagePageView() as ImagePageView
         (viewInEditPlace)?.initSubviews(nibName:Tools.comicsPatternsById[Storage.common.comicsList[comicsIndex].pages[pageIndex].pattern] , comicsIndex: comicsIndex, pageIndex: pageIndex)//
@@ -66,6 +85,21 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return boomImages.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as UICollectionViewCell
+        let imageView = cell.viewWithTag(_ :1) as! UIImageView
+        imageView.image = boomImages[indexPath.row]
+
+        return cell
+    }
+    
     
     
 
