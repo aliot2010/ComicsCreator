@@ -12,4 +12,5 @@ class Page: Object {
     dynamic var pattern = 0
     var images = List<Image>()
     var booms = List<Boom>()
+    var bubbles = List<Bubble>()
 }

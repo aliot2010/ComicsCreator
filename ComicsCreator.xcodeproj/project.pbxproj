@@ -17,6 +17,9 @@
 		FA0B19851DE9E11600120AC3 /* Boom.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0B19841DE9E11600120AC3 /* Boom.xib */; };
 		FA0B19871DE9E4B300120AC3 /* BoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B19861DE9E4B200120AC3 /* BoomView.swift */; };
 		FA0B19891DE9F4D700120AC3 /* Boom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B19881DE9F4D700120AC3 /* Boom.swift */; };
+		FA0B198B1DEB016B00120AC3 /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B198A1DEB016B00120AC3 /* Bubble.swift */; };
+		FA0B198D1DEB02BD00120AC3 /* Bubble.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0B198C1DEB02BD00120AC3 /* Bubble.xib */; };
+		FA0B198F1DEB05CA00120AC3 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B198E1DEB05CA00120AC3 /* BubbleView.swift */; };
 		FA0B1F021DE05173000B1D22 /* Comics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F011DE05173000B1D22 /* Comics.swift */; };
 		FA0B1F041DE056CB000B1D22 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F031DE056CB000B1D22 /* Tools.swift */; };
 		FA0B1F061DE058B6000B1D22 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F051DE058B6000B1D22 /* StorageManager.swift */; };
@@ -29,7 +32,7 @@
 		FA1D7B541DE4650C006F658B /* DualImagePageView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA1D7B531DE4650C006F658B /* DualImagePageView1.xib */; };
 		FA1D7B561DE47904006F658B /* ImagePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D7B551DE47904006F658B /* ImagePageView.swift */; };
 		FA1D7B591DE47D32006F658B /* EditModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1D7B581DE47D32006F658B /* EditModeViewController.swift */; };
-		FA30D75D1DDE1C1400E57659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA30D75B1DDE1C1400E57659 /* Main.storyboard */; };
+		FA30D75D1DDE1C1400E57659 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA30D75B1DDE1C1400E57659 /* Main.storyboard */; settings = {ASSET_TAGS = (buuble2, ); }; };
 		FA30D75F1DDE20B000E57659 /* CreateComicsCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30D75E1DDE20B000E57659 /* CreateComicsCover.swift */; };
 		FA317B0F1DDDFA3100CAD924 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA317B0E1DDDFA3100CAD924 /* CollectionViewModel.swift */; };
 		FAD877B21DE759AD009F92DF /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD877B11DE759AD009F92DF /* Image.swift */; };
@@ -50,6 +53,9 @@
 		FA0B19841DE9E11600120AC3 /* Boom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Boom.xib; sourceTree = "<group>"; };
 		FA0B19861DE9E4B200120AC3 /* BoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoomView.swift; sourceTree = "<group>"; };
 		FA0B19881DE9F4D700120AC3 /* Boom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boom.swift; sourceTree = "<group>"; };
+		FA0B198A1DEB016B00120AC3 /* Bubble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
+		FA0B198C1DEB02BD00120AC3 /* Bubble.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Bubble.xib; sourceTree = "<group>"; };
+		FA0B198E1DEB05CA00120AC3 /* BubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		FA0B1F011DE05173000B1D22 /* Comics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comics.swift; sourceTree = "<group>"; };
 		FA0B1F031DE056CB000B1D22 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		FA0B1F051DE058B6000B1D22 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -118,7 +124,7 @@
 		FA0725941DDD9FC60093C37F /* ComicsCreator */ = {
 			isa = PBXGroup;
 			children = (
-				FA0B19831DE9E0EB00120AC3 /* BoomImages */,
+				FA0B19831DE9E0EB00120AC3 /* BoomImagesAndClouds */,
 				FA1D7B571DE47D04006F658B /* EditMode */,
 				FA1D7B4C1DE45ECA006F658B /* Patterns */,
 				FA0B1F071DE07026000B1D22 /* PagesController */,
@@ -144,13 +150,15 @@
 			name = startPage;
 			sourceTree = "<group>";
 		};
-		FA0B19831DE9E0EB00120AC3 /* BoomImages */ = {
+		FA0B19831DE9E0EB00120AC3 /* BoomImagesAndClouds */ = {
 			isa = PBXGroup;
 			children = (
 				FA0B19841DE9E11600120AC3 /* Boom.xib */,
 				FA0B19861DE9E4B200120AC3 /* BoomView.swift */,
+				FA0B198C1DEB02BD00120AC3 /* Bubble.xib */,
+				FA0B198E1DEB05CA00120AC3 /* BubbleView.swift */,
 			);
-			name = BoomImages;
+			name = BoomImagesAndClouds;
 			sourceTree = "<group>";
 		};
 		FA0B1F001DE05092000B1D22 /* Models */ = {
@@ -162,6 +170,7 @@
 				FA0B1F051DE058B6000B1D22 /* StorageManager.swift */,
 				FA0B1F0A1DE07279000B1D22 /* Page.swift */,
 				FA0B19881DE9F4D700120AC3 /* Boom.swift */,
+				FA0B198A1DEB016B00120AC3 /* Bubble.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -234,6 +243,9 @@
 		FA07258A1DDD9FC50093C37F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					buuble2,
+				);
 				LastSwiftUpdateCheck = 0810;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "alex L";
@@ -274,6 +286,7 @@
 				FA1D7B541DE4650C006F658B /* DualImagePageView1.xib in Resources */,
 				FA0725A01DDD9FC60093C37F /* LaunchScreen.storyboard in Resources */,
 				FA07259D1DDD9FC60093C37F /* Assets.xcassets in Resources */,
+				FA0B198D1DEB02BD00120AC3 /* Bubble.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +353,9 @@
 				FA0B19871DE9E4B300120AC3 /* BoomView.swift in Sources */,
 				FAD877B21DE759AD009F92DF /* Image.swift in Sources */,
 				FA1A31191DE6D69200770F51 /* AddCoverCollectionViewCell.swift in Sources */,
+				FA0B198B1DEB016B00120AC3 /* Bubble.swift in Sources */,
 				FA1D7B561DE47904006F658B /* ImagePageView.swift in Sources */,
+				FA0B198F1DEB05CA00120AC3 /* BubbleView.swift in Sources */,
 				FA1D7B591DE47D32006F658B /* EditModeViewController.swift in Sources */,
 				FA0B1F0B1DE07279000B1D22 /* Page.swift in Sources */,
 				FA30D75F1DDE20B000E57659 /* CreateComicsCover.swift in Sources */,

@@ -36,7 +36,7 @@
         <scene sceneID="mFB-gs-UFO">
             <objects>
                 <collectionViewController id="exw-ii-WBx" customClass="ViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="ojk-8b-VHp">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ojk-8b-VHp">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.3568299412727356" green="0.3568844199180603" blue="0.35681277513504028" alpha="0.42554045376712329" colorSpace="custom" customColorSpace="sRGB"/>
@@ -114,7 +114,7 @@
         <scene sceneID="2dq-Iu-BIs">
             <objects>
                 <collectionViewController id="vb8-CO-tHR" customClass="PagesCollectionViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="lO4-Ig-fPm">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="lO4-Ig-fPm">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -314,13 +314,83 @@
                                         <rect key="frame" x="333" y="18" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="thought-bubble"/>
+                                        <connections>
+                                            <action selector="bubbleButtonClicked:" destination="zuV-gA-W6h" eventType="touchUpInside" id="sR4-NE-xbQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZAr-1y-M51">
                                         <rect key="frame" x="468" y="18" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="enhance-effect"/>
                                     </button>
-                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-PT-FAh">
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yQx-d7-lhQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="87"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQj-s3-ZLI">
+                                                <rect key="frame" x="21" y="18" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="back-arrow"/>
+                                                <connections>
+                                                    <action selector="bubbleBackButtonClicked:" destination="zuV-gA-W6h" eventType="touchUpInside" id="te5-9L-6sh"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bch-37-4Zu">
+                                                <rect key="frame" x="103" y="49" width="166" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text in Bubble" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oCA-JK-X7D">
+                                                <rect key="frame" x="103" y="18" width="109" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xgg-TN-55k">
+                                                <rect key="frame" x="277" y="0.0" width="491" height="87"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="buble0" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojb-Nn-iYD">
+                                                        <rect key="frame" x="8" y="18" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button" image="buble0"/>
+                                                        <connections>
+                                                            <action selector="onBubbleClicked:" destination="zuV-gA-W6h" eventType="touchUpInside" id="0S0-S7-hKb"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="buuble2" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JR8-JT-Yn1">
+                                                        <rect key="frame" x="91" y="18" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button" image="buuble2"/>
+                                                        <connections>
+                                                            <action selector="onBubbleClicked:" destination="zuV-gA-W6h" eventType="touchUpInside" id="Rel-iE-AvX"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="bubble3" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1D-uq-VOr">
+                                                        <rect key="frame" x="180" y="18" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button" image="bubble3"/>
+                                                        <connections>
+                                                            <action selector="onBubbleClicked:" destination="zuV-gA-W6h" eventType="touchUpInside" id="xy8-Dn-Cvx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="bubble4" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTo-M0-2vV">
+                                                        <rect key="frame" x="265" y="18" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button" image="bubble4"/>
+                                                        <connections>
+                                                            <action selector="onBubbleClicked:" destination="zuV-gA-W6h" eventType="touchUpInside" id="cWa-II-oKP"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </scrollView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.72150439023971558" green="0.72160977125167847" blue="0.72148138284683228" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-PT-FAh">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="87"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -346,7 +416,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="Mbo-98-dRx">
-                                                        <rect key="frame" x="8" y="9" width="100" height="70"/>
+                                                        <rect key="frame" x="8" y="8.5" width="100" height="70"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="70"/>
@@ -370,6 +440,11 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="NcX-PT-FAh"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cMY-ZV-dAL">
                                 <rect key="frame" x="20" y="72" width="728" height="821"/>
@@ -382,7 +457,7 @@
                     <navigationItem key="navigationItem" title="Edit Mode" id="7HW-Lh-PAo"/>
                     <connections>
                         <outlet property="boomView" destination="NcX-PT-FAh" id="roF-aF-sze"/>
-                        <outlet property="collectionView" destination="fuE-ts-Y67" id="veK-U7-J2Z"/>
+                        <outlet property="bubbleView" destination="yQx-d7-lhQ" id="dtv-jM-BjA"/>
                         <outlet property="editPlace" destination="cMY-ZV-dAL" id="6dI-if-cp2"/>
                     </connections>
                 </viewController>
@@ -469,6 +544,10 @@
         <image name="1366564980_919021232" width="675" height="1024"/>
         <image name="back-arrow" width="256" height="256"/>
         <image name="boom" width="256" height="256"/>
+        <image name="bubble3" width="500" height="342"/>
+        <image name="bubble4" width="400" height="400"/>
+        <image name="buble0" width="300" height="226"/>
+        <image name="buuble2" width="958" height="958"/>
         <image name="enhance-effect" width="256" height="256"/>
         <image name="photos" width="256" height="256"/>
         <image name="thought-bubble" width="256" height="256"/>

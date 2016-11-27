@@ -10,18 +10,24 @@ import UIKit
 
 class EditModeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource  {
     
+    @IBOutlet weak var bubbleView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var boomView: UIView!
     
     let boomImages = [UIImage(named: "bang"), UIImage(named: "boom-copy"), UIImage(named: "wow")]
     
+    let  bubbleImages = [UIImage(named: "buble0"), UIImage(named: "buuble2"), UIImage(named: "bubble3") , UIImage(named: "bubble4")]
+    
     var boomViewList = [BoomView]()
+    var bubbleViewList = [BubbleView]()
     
     
     let imagePicker = UIImagePickerController()
  
     var pageIndex = 1
     var comicsIndex = 1
+    
+    
     
     var ind = 0
     
@@ -59,6 +65,33 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
             
         }
     }
+    func updateBubblesViews(){
+        for i in 0..<Storage.common.comicsList[comicsIndex].pages[pageIndex].bubbles.count{
+            let testFrame : CGRect = CGRect(x: 30, y: 30, width: 70, height: 50)
+            let bubView = BubbleView(frame: testFrame) as BubbleView
+            bubView.initSubviews(nibName: "Buubble")
+            bubbleViewList.append(bubView)
+            
+            bubView.label.text = Storage.common.comicsList[comicsIndex].pages[pageIndex].bubbles[i].text
+            
+            bubView.imageView.image = UIImage(named: Storage.common.comicsList[comicsIndex].pages[pageIndex].bubbles[i].imageName)
+            
+            let x = Storage.common.comicsList[comicsIndex].pages[pageIndex].bubbles[i].boomX
+            let y = Storage.common.comicsList[comicsIndex].pages[pageIndex].bubbles[i].boomY
+            
+            let scaleX = Storage.common.comicsList[comicsIndex].pages[pageIndex].bubbles[i].scaleX
+            let scaleY = Storage.common.comicsList[comicsIndex].pages[pageIndex].bubbles[i].scaleY
+            
+            
+            bubbleViewList[i].transform = (bubbleViewList[i] as UIView).transform.scaledBy(x: CGFloat(scaleX), y: CGFloat(scaleY))
+            
+            bubbleViewList[i].center = CGPoint(x:x, y:y)
+            //UPDATEREG TODO
+            
+            editPlace.addSubview(bubView)
+            
+        }
+    }
     
     func updateRecognizers(from view:UIView){
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(self.pinchRecognizer(_:)))
@@ -74,19 +107,29 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBAction func bommButtonClicked(_ sender: Any) {
         boomView.isHidden = false
+        
     }
     
     
     @IBAction func boomBackButtonClicked(_ sender: UIButton) {
         boomView.isHidden = true
+        
     }
+    
+    @IBAction func bubbleButtonClicked(_ sender: UIButton) {
+        bubbleView.isHidden = false
+        
+    }
+    
+    @IBAction func bubbleBackButtonClicked(_ sender: UIButton) {
+        bubbleView.isHidden = true
+    }
+  
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
-        
-        
         
         viewInEditPlace = ImagePageView() as ImagePageView
         (viewInEditPlace)?.initSubviews(nibName:Tools.comicsPatternsById[Storage.common.comicsList[comicsIndex].pages[pageIndex].pattern] , comicsIndex: comicsIndex, pageIndex: pageIndex)
@@ -98,11 +141,25 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
         
     }
 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
-    
 
     @IBAction func setImageButtonClicked(_ sender: UIButton) {
         ind = (viewInEditPlace?.getSelectedViewIndex())!
@@ -132,8 +189,6 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return boomImages.count
@@ -176,8 +231,31 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
      
         
     }
+    
+    
+    @IBAction func onBubbleClicked(_ sender: UIButton) {
+        let testFrame : CGRect = CGRect(x: 30, y: 30, width: 170, height: 150)
+        let bubView = BubbleView(frame: testFrame) as BubbleView
+        bubView.initSubviews(nibName: "Bubble")
+        
+        bubView.imageView.image = UIImage(named: sender.restorationIdentifier!)
+        bubView.label.text = "Arrgh"
+        
+        bubbleViewList.append(bubView)
+        
+        try! Storage.common.realm.write {
+            Storage.common.comicsList[comicsIndex].pages[pageIndex].bubbles.append(Bubble())
+            Storage.common.comicsList[comicsIndex].pages[pageIndex].bubbles[Storage.common.comicsList[comicsIndex].pages[pageIndex].bubbles.count - 1].imageName = sender.restorationIdentifier!
+        
+            
+        }
+        
+        
+        
+        editPlace.addSubview(bubView)
+    }
 
-
+////////////
     
     func panGestRecognizer(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: self.view)
