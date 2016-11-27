@@ -30,16 +30,46 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
     var viewEditPlaceholder:UIView?
     
     func updateBoomViews(){
-        for i in 0..<boomViewList.count{
+        for i in 0..<Storage.common.comicsList[comicsIndex].pages[pageIndex].booms.count{
             let testFrame : CGRect = CGRect(x: 30, y: 30, width: 70, height: 50)
             
             let caboomView = BoomView(frame: testFrame) as BoomView
             
-            caboomView.initSubviews(nibName: Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].imageX)
+            caboomView.initSubviews(nibName: "Boom")
+            boomViewList.append(caboomView)
             
-            caboomView.image.image = UIImage(named: namesOfBoomsImages[indexPath.row]!)
+            
+            caboomView.image.image = UIImage(named: Storage.common.comicsList[comicsIndex].pages[pageIndex].booms[i].imageName)
+            
+            let x = Storage.common.comicsList[comicsIndex].pages[pageIndex].booms[i].boomX
+            let y = Storage.common.comicsList[comicsIndex].pages[pageIndex].booms[i].boomY
+                
+            let scaleX = Storage.common.comicsList[comicsIndex].pages[pageIndex].booms[i].scaleX
+            let scaleY = Storage.common.comicsList[comicsIndex].pages[pageIndex].booms[i].scaleY
+            
+            boomViewList[i].transform = (boomViewList[i] as UIView).transform.scaledBy(x: CGFloat(scaleX), y: CGFloat(scaleY))
+            
+            
+            boomViewList[i].center = CGPoint(x:x, y:y)
+            
+            let pinch = UIPinchGestureRecognizer(target: self, action: #selector(self.pinchRecognizer(_:)))
+            
+            let pan = UIPanGestureRecognizer(target: self, action: #selector(self.panGestRecognizer(_:)))
+            
+            caboomView.isUserInteractionEnabled = true
+            caboomView.isMultipleTouchEnabled = true
+            caboomView.addGestureRecognizer(pinch)
+            caboomView.addGestureRecognizer(pan)
+            
+            
+            
+            editPlace.addSubview(caboomView)
+            
+            
         }
     }
+    
+    
     
     @IBAction func bommButtonClicked(_ sender: Any) {
         boomView.isHidden = false
@@ -58,9 +88,11 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
         
         
         viewInEditPlace = ImagePageView() as ImagePageView
-        (viewInEditPlace)?.initSubviews(nibName:Tools.comicsPatternsById[Storage.common.comicsList[comicsIndex].pages[pageIndex].pattern] , comicsIndex: comicsIndex, pageIndex: pageIndex)//
+        (viewInEditPlace)?.initSubviews(nibName:Tools.comicsPatternsById[Storage.common.comicsList[comicsIndex].pages[pageIndex].pattern] , comicsIndex: comicsIndex, pageIndex: pageIndex)
         viewInEditPlace?.frame = editPlace.bounds
         editPlace.addSubview(viewInEditPlace!)
+        
+        updateBoomViews()//
         
         
     }
@@ -131,6 +163,7 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
         try! Storage.common.realm.write {
  
             Storage.common.comicsList[comicsIndex].pages[pageIndex].booms.append(Boom())
+            Storage.common.comicsList[comicsIndex].pages[pageIndex].booms[Storage.common.comicsList[comicsIndex].pages[pageIndex].booms.count - 1].imageName = namesOfBoomsImages[indexPath.row]!
         }
         
         
