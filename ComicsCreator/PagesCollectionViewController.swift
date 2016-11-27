@@ -9,6 +9,7 @@
 import UIKit
 
 private let reuseIdentifier = "Cell"
+import RealmSwift
 
 class PagesCollectionViewController: UICollectionViewController {
      public var index = 0
@@ -17,6 +18,14 @@ class PagesCollectionViewController: UICollectionViewController {
     
     
 
+    @IBAction func deleteButtonClicked(_ sender: UIBarButtonItem) {
+        if (selectedIndex != -1 && modeFlag == 1){
+            Storage.common.deleteAny(object: Storage.common.comicsList[index].pages[selectedIndex])
+            self.collectionView?.reloadData()
+            self.collectionView?.refreshControl
+            
+        }
+    }
     
     @IBAction func switchMode(_ sender: UISegmentedControl) {
         if (modeFlag==0){

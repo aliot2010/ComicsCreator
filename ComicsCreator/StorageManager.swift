@@ -26,6 +26,11 @@ class Storage{
             realm.add(comix)
         }
     }
+    func deleteAny(object:Object){
+        try! realm.write {
+            realm.delete(object)
+        }
+    }
     
     func deleteComix(comix : Comics){
         try! realm.write {

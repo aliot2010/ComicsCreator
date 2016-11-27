@@ -103,6 +103,10 @@ class ViewController: UICollectionViewController, UIGestureRecognizerDelegate {
          self.collectionView?.reloadData()
         self.collectionView?.refreshControl
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+    }
    
 
 }

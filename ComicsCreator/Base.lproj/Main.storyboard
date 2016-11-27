@@ -140,7 +140,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="169"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1366564980_919021232" translatesAutoresizingMaskIntoConstraints="NO" id="zRz-fC-pSp">
+                                        <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1366564980_919021232" translatesAutoresizingMaskIntoConstraints="NO" id="zRz-fC-pSp">
                                             <rect key="frame" x="5" y="5" width="110" height="159"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -182,6 +182,9 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="2zX-GW-zNT"/>
                         <barButtonItem systemItem="trash" id="9sT-o4-g0R">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="deleteButtonClicked:" destination="vb8-CO-tHR" id="3Q9-5m-pwO"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="9c0-ls-U1z"/>
                         <barButtonItem systemItem="add" id="hJv-jE-xDz">
