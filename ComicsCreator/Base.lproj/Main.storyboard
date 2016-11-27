@@ -390,7 +390,7 @@
                                         </subviews>
                                         <color key="backgroundColor" red="0.72150439023971558" green="0.72160977125167847" blue="0.72148138284683228" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-PT-FAh">
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NcX-PT-FAh">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="87"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
@@ -440,11 +440,6 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="NcX-PT-FAh"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cMY-ZV-dAL">
                                 <rect key="frame" x="20" y="72" width="728" height="821"/>
@@ -459,6 +454,7 @@
                         <outlet property="boomView" destination="NcX-PT-FAh" id="roF-aF-sze"/>
                         <outlet property="bubbleView" destination="yQx-d7-lhQ" id="dtv-jM-BjA"/>
                         <outlet property="editPlace" destination="cMY-ZV-dAL" id="6dI-if-cp2"/>
+                        <outlet property="textInBubble" destination="Bch-37-4Zu" id="dp1-AD-MAB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faO-vz-632" userLabel="First Responder" sceneMemberID="firstResponder"/>

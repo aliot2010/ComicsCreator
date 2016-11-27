@@ -17,26 +17,29 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="300" height="201"/>
+        <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="buuble2" translatesAutoresizingMaskIntoConstraints="NO" id="as0-Yo-FKx">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="226"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buuble2" translatesAutoresizingMaskIntoConstraints="NO" id="as0-Yo-FKx">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="105"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33333333423423424244342342342342342342" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wed-1m-iGt">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="201"/>
-                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="28"/>
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
+                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="21"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="wed-1m-iGt" secondAttribute="trailing" id="1rw-Yg-1oz"/>
-                <constraint firstAttribute="bottom" secondItem="wed-1m-iGt" secondAttribute="bottom" id="6Gf-Wg-VDm"/>
-                <constraint firstItem="wed-1m-iGt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FZA-Q4-hi5"/>
-                <constraint firstItem="wed-1m-iGt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="r59-sR-Yyc"/>
+                <constraint firstAttribute="trailing" secondItem="as0-Yo-FKx" secondAttribute="trailing" id="2Jb-RC-RfM"/>
+                <constraint firstItem="wed-1m-iGt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9Dw-gr-p0Z"/>
+                <constraint firstAttribute="trailing" secondItem="wed-1m-iGt" secondAttribute="trailing" id="F9O-ui-1KY"/>
+                <constraint firstItem="as0-Yo-FKx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FX3-iT-iSY"/>
+                <constraint firstAttribute="bottom" secondItem="as0-Yo-FKx" secondAttribute="bottom" constant="-25" id="hL4-pk-SWk"/>
+                <constraint firstAttribute="bottom" secondItem="wed-1m-iGt" secondAttribute="bottom" id="iMo-p2-3Zn"/>
+                <constraint firstItem="wed-1m-iGt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="iwr-Wc-QZq"/>
+                <constraint firstItem="as0-Yo-FKx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qAb-9O-Znb"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
