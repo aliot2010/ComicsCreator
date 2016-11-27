@@ -185,27 +185,46 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
             view.center = CGPoint(x:view.center.x + translation.x,
                                   y:view.center.y + translation.y)
         }
+        if(sender.view is BoomView){
+            panRecognizeBoom(sender)
+        }
+      
+        
+      
+        sender.setTranslation(CGPoint.zero, in: self.view)
+    }
+    
+    func panRecognizeBoom(_ sender: UIPanGestureRecognizer ){
+        let translation = sender.translation(in: self.view)
         for i in 0..<boomViewList.count{
             if(boomViewList[i].isEqual(sender.view)){
                 try! Storage.common.realm.write {
+                    
                     Storage.common.comicsList[comicsIndex].pages[pageIndex].booms[i].boomX = Double((sender.view?.center.x)!) + Double(translation.x)
                     Storage.common.comicsList[comicsIndex].pages[pageIndex].booms[i].boomY  = Double((sender.view?.center.y)!) + Double(translation.y)
                 }
                 break
             }
         }
-        
-      
-        sender.setTranslation(CGPoint.zero, in: self.view)
     }
     
-   // func recognize
     
      func pinchRecognizer(_ sender: UIPinchGestureRecognizer) {
         if let view = sender.view {
-            view.transform = view.transform.scaledBy(x: sender.scale, y: sender.scale)
+            view.transform = (sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale))!
   
+        }//
+        for i in 0..<boomViewList.count{
+            if(boomViewList[i].isEqual(sender.view)){
+                try! Storage.common.realm.write {
+                    print(sender.scale)
+                    Storage.common.comicsList[comicsIndex].pages[pageIndex].booms[i].scaleX = Double(Storage.common.comicsList[comicsIndex].pages[pageIndex].booms[i].scaleX * Double(sender.scale))
+                    Storage.common.comicsList[comicsIndex].pages[pageIndex].booms[i].scaleY = Double(Storage.common.comicsList[comicsIndex].pages[pageIndex].booms[i].scaleY * Double(sender.scale))
+                }
+                break
+            }
         }
+
       
          sender.scale = 1
     }

@@ -168,7 +168,7 @@ class ImagePageView: UIView {
     @IBAction func pinchRecognizer(_ sender: UIPinchGestureRecognizer) {
         if let view = sender.view {
             view.transform = view.transform.scaledBy(x: sender.scale, y: sender.scale)
-            print(sender.scale)
+            
             for i in 0..<numberOfImage{
                 if(currentImageViewList[i].isEqual(sender.view)){
                     try! Storage.common.realm.write {
