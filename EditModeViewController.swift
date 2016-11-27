@@ -214,6 +214,13 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
             view.transform = (sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale))!
   
         }//
+        if(sender.view is BoomView){
+            pinchRecognizeBoom(sender)
+        }
+         sender.scale = 1
+    }
+    
+    func pinchRecognizeBoom(_ sender: UIPinchGestureRecognizer){
         for i in 0..<boomViewList.count{
             if(boomViewList[i].isEqual(sender.view)){
                 try! Storage.common.realm.write {
@@ -225,8 +232,6 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
             }
         }
 
-      
-         sender.scale = 1
     }
     
  
