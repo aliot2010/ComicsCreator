@@ -15,6 +15,8 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
     
     let boomImages = [UIImage(named: "bang"), UIImage(named: "boom-copy"), UIImage(named: "wow")]
     
+    var boomViewList = [BoomView]()
+    
     
     let imagePicker = UIImagePickerController()
  
@@ -26,6 +28,18 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
     var viewInEditPlace:ImagePageView? = nil
     @IBOutlet weak var editPlace: UIView!
     var viewEditPlaceholder:UIView?
+    
+    func updateBoomViews(){
+        for i in 0..<boomViewList.count{
+            let testFrame : CGRect = CGRect(x: 30, y: 30, width: 70, height: 50)
+            
+            let caboomView = BoomView(frame: testFrame) as BoomView
+            
+            caboomView.initSubviews(nibName: Storage.common.comicsList[comicsIndex].pages[pageIndex].images[i].imageX)
+            
+            caboomView.image.image = UIImage(named: namesOfBoomsImages[indexPath.row]!)
+        }
+    }
     
     @IBAction func bommButtonClicked(_ sender: Any) {
         boomView.isHidden = false
@@ -100,7 +114,67 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
         return cell
     }
     
+    let namesOfBoomsImages : [Int : String] = [0:"bang", 1:"boom-copy", 2:"wow"]
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
+       let testFrame : CGRect = CGRect(x: 30, y: 30, width: 70, height: 50)
+        
+        let caboomView = BoomView(frame: testFrame) as BoomView
+        
+        caboomView.initSubviews(nibName: "Boom")
+        
+        caboomView.image.image = UIImage(named: namesOfBoomsImages[indexPath.row]!)
+        
+        boomViewList.append(caboomView)
+        
+        try! Storage.common.realm.write {
+ 
+            Storage.common.comicsList[comicsIndex].pages[pageIndex].booms.append(Boom())
+        }
+        
+        
+        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(self.pinchRecognizer(_:)))
+        
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(self.panGestRecognizer(_:)))
+        
+        caboomView.isUserInteractionEnabled = true
+        caboomView.isMultipleTouchEnabled = true
+        caboomView.addGestureRecognizer(pinch)
+        caboomView.addGestureRecognizer(pan)
+        
+        editPlace.addSubview(caboomView)
+        
+     
+        
+    }
+
+
     
+    func panGestRecognizer(_ sender: UIPanGestureRecognizer) {
+        let translation = sender.translation(in: self.view)
+        if let view = sender.view {
+            view.center = CGPoint(x:view.center.x + translation.x,
+                                  y:view.center.y + translation.y)
+        }
+
+        sender.view?.isUserInteractionEnabled = true
+        sender.view?.isMultipleTouchEnabled = true
+        sender.setTranslation(CGPoint.zero, in: self.view)
+      
+        
+    }
     
+     func pinchRecognizer(_ sender: UIPinchGestureRecognizer) {
+        if let view = sender.view {
+            view.transform = view.transform.scaledBy(x: sender.scale, y: sender.scale)
+  
+        }
+        sender.view?.isUserInteractionEnabled = true
+        sender.view?.isMultipleTouchEnabled = true
+         sender.scale = 1
+    }
+    
+ 
 
 }

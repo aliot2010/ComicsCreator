@@ -15,6 +15,8 @@
 		FA0725B31DDDB7820093C37F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0725B21DDDB7820093C37F /* CollectionViewCell.swift */; };
 		FA0B19801DE9CD4A00120AC3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B197F1DE9CD4A00120AC3 /* CollectionViewController.swift */; };
 		FA0B19851DE9E11600120AC3 /* Boom.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA0B19841DE9E11600120AC3 /* Boom.xib */; };
+		FA0B19871DE9E4B300120AC3 /* BoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B19861DE9E4B200120AC3 /* BoomView.swift */; };
+		FA0B19891DE9F4D700120AC3 /* Boom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B19881DE9F4D700120AC3 /* Boom.swift */; };
 		FA0B1F021DE05173000B1D22 /* Comics.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F011DE05173000B1D22 /* Comics.swift */; };
 		FA0B1F041DE056CB000B1D22 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F031DE056CB000B1D22 /* Tools.swift */; };
 		FA0B1F061DE058B6000B1D22 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B1F051DE058B6000B1D22 /* StorageManager.swift */; };
@@ -46,6 +48,8 @@
 		FA0725B21DDDB7820093C37F /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FA0B197F1DE9CD4A00120AC3 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		FA0B19841DE9E11600120AC3 /* Boom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Boom.xib; sourceTree = "<group>"; };
+		FA0B19861DE9E4B200120AC3 /* BoomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoomView.swift; sourceTree = "<group>"; };
+		FA0B19881DE9F4D700120AC3 /* Boom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Boom.swift; sourceTree = "<group>"; };
 		FA0B1F011DE05173000B1D22 /* Comics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comics.swift; sourceTree = "<group>"; };
 		FA0B1F031DE056CB000B1D22 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		FA0B1F051DE058B6000B1D22 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -144,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				FA0B19841DE9E11600120AC3 /* Boom.xib */,
+				FA0B19861DE9E4B200120AC3 /* BoomView.swift */,
 			);
 			name = BoomImages;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 				FA0B1F031DE056CB000B1D22 /* Tools.swift */,
 				FA0B1F051DE058B6000B1D22 /* StorageManager.swift */,
 				FA0B1F0A1DE07279000B1D22 /* Page.swift */,
+				FA0B19881DE9F4D700120AC3 /* Boom.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -331,6 +337,7 @@
 				FA0725961DDD9FC60093C37F /* AppDelegate.swift in Sources */,
 				FA0B1F091DE0705A000B1D22 /* PagesCollectionViewController.swift in Sources */,
 				FA0B19801DE9CD4A00120AC3 /* CollectionViewController.swift in Sources */,
+				FA0B19871DE9E4B300120AC3 /* BoomView.swift in Sources */,
 				FAD877B21DE759AD009F92DF /* Image.swift in Sources */,
 				FA1A31191DE6D69200770F51 /* AddCoverCollectionViewCell.swift in Sources */,
 				FA1D7B561DE47904006F658B /* ImagePageView.swift in Sources */,
@@ -339,6 +346,7 @@
 				FA30D75F1DDE20B000E57659 /* CreateComicsCover.swift in Sources */,
 				FA1A31171DE6CEC100770F51 /* AddCoverCollectionViewController.swift in Sources */,
 				FA0B1F041DE056CB000B1D22 /* Tools.swift in Sources */,
+				FA0B19891DE9F4D700120AC3 /* Boom.swift in Sources */,
 				FA317B0F1DDDFA3100CAD924 /* CollectionViewModel.swift in Sources */,
 				FA0B1F021DE05173000B1D22 /* Comics.swift in Sources */,
 				FA0B1F061DE058B6000B1D22 /* StorageManager.swift in Sources */,

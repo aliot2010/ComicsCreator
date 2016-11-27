@@ -9,17 +9,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BoomView" customModule="ComicsCreator" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="QgB-aB-gwR"/>
+                <outlet property="image" destination="Nnk-ym-VtT" id="EBN-N7-kR3"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boom-copy" translatesAutoresizingMaskIntoConstraints="NO" id="Nnk-ym-VtT">
+                <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boom-copy" translatesAutoresizingMaskIntoConstraints="NO" id="Nnk-ym-VtT">
                     <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Nnk-ym-VtT" secondAttribute="bottom" id="3AM-El-bXX"/>
                 <constraint firstItem="Nnk-ym-VtT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5pd-9b-mmq"/>
@@ -30,7 +35,7 @@
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="41" y="-173.5"/>
+            <point key="canvasLocation" x="41" y="-174"/>
         </view>
     </objects>
     <resources>
