@@ -36,7 +36,7 @@
         <scene sceneID="mFB-gs-UFO">
             <objects>
                 <collectionViewController id="exw-ii-WBx" customClass="ViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ojk-8b-VHp">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="ojk-8b-VHp">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.3568299412727356" green="0.3568844199180603" blue="0.35681277513504028" alpha="0.42554045376712329" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,6 +71,7 @@
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" red="0.41564735770225525" green="0.4157111644744873" blue="0.41563338041305542" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="image" destination="4ee-er-ndT" id="gF1-Ow-B1d"/>
                                     <outlet property="label" destination="Y7I-zI-xoC" id="1VS-2h-ggv"/>
@@ -86,6 +87,9 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="RsF-4G-8aB"/>
                         <barButtonItem systemItem="trash" id="meq-fZ-yta">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="deleteComics:" destination="exw-ii-WBx" id="jC3-vS-r5V"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="69S-XQ-7uG"/>
                         <barButtonItem systemItem="add" id="61o-k3-Kds">
@@ -97,11 +101,15 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="NX2-2O-2PG"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Comics Creator" id="Sa7-tQ-rCl">
-                        <barButtonItem key="rightBarButtonItem" title="Add Comix" id="zuI-IZ-w3W">
+                        <barButtonItem key="rightBarButtonItem" title="Edit mode" id="zuI-IZ-w3W">
                             <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <action selector="editModeClicked:" destination="exw-ii-WBx" id="SSb-ti-5Yy"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="vb8-CO-tHR" kind="show" identifier="mainToItem" id="Wsi-Tl-R74"/>
                     </connections>
@@ -114,7 +122,7 @@
         <scene sceneID="2dq-Iu-BIs">
             <objects>
                 <collectionViewController id="vb8-CO-tHR" customClass="PagesCollectionViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="lO4-Ig-fPm">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="lO4-Ig-fPm">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -215,7 +223,7 @@
         <scene sceneID="NxH-r9-V4h">
             <objects>
                 <collectionViewController id="a1H-dh-RWV" customClass="AddCoverCollectionViewController" customModule="ComicsCreator" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="42R-xk-Yod">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="42R-xk-Yod">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -549,7 +557,7 @@
         <image name="thought-bubble" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Wsi-Tl-R74"/>
         <segue reference="gfc-mR-wpf"/>
-        <segue reference="i3a-if-Yqu"/>
     </inferredMetricsTieBreakers>
 </document>

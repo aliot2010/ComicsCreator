@@ -8,18 +8,37 @@
 
 import UIKit
 
-class ViewController: UICollectionViewController {
+class ViewController: UICollectionViewController, UIGestureRecognizerDelegate {
     public let documentsDirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
 
+    var selectedIndex = -1
+    var editMode = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setDefoultPhoto()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "rozhicy_cherno_beloe_nadpisi_1920x1200" )!)
-        // Do any additional setup after loading the view, typically from a nib.
+       
+      
     }
     
+    
+    @IBAction func editModeClicked(_ sender: UIBarButtonItem) {
+        if (editMode==0){
+            editMode = 1
+            
+        } else {
+            editMode = 0
+        }
+    }
+    
+    
+
+    
+  
+   
     override func viewDidAppear(_ animated: Bool) {
         self.collectionView?.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,7 +78,16 @@ class ViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "mainToItem", sender:indexPath.row)
+        if(selectedIndex != -1){
+            collectionView.cellForItem(at: IndexPath(row: selectedIndex, section: 0 ))?.backgroundColor = UIColor.clear
+        }
+        if (editMode == 1){
+            collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor.orange
+            selectedIndex = indexPath.row
+        } else {
+            
+            self.performSegue(withIdentifier: "mainToItem", sender:indexPath.row)
+        }
     }
     
     func setDefoultPhoto(){
@@ -68,6 +96,14 @@ class ViewController: UICollectionViewController {
         try! data?.write(to: photoURL!, options: Data.WritingOptions.atomic)
     }
     
+    
+   
+    @IBAction func deleteComics(_ sender: UIBarButtonItem) {
+        Storage.common.deleteComix(comix: Storage.common.comicsList[selectedIndex])
+         self.collectionView?.reloadData()
+        self.collectionView?.refreshControl
+    }
+   
 
 }
 
