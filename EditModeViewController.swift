@@ -51,25 +51,26 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
             
             
             boomViewList[i].center = CGPoint(x:x, y:y)
+
             
-            let pinch = UIPinchGestureRecognizer(target: self, action: #selector(self.pinchRecognizer(_:)))
-            
-            let pan = UIPanGestureRecognizer(target: self, action: #selector(self.panGestRecognizer(_:)))
-            
-            caboomView.isUserInteractionEnabled = true
-            caboomView.isMultipleTouchEnabled = true
-            caboomView.addGestureRecognizer(pinch)
-            caboomView.addGestureRecognizer(pan)
-            
-            
-            
+            updateRecognizers(from: caboomView)
             editPlace.addSubview(caboomView)
             
             
         }
     }
     
-    
+    func updateRecognizers(from view:UIView){
+        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(self.pinchRecognizer(_:)))
+        
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(self.panGestRecognizer(_:)))
+        
+        view.isUserInteractionEnabled = true
+        view.isMultipleTouchEnabled = true
+        view.addGestureRecognizer(pinch)
+        view.addGestureRecognizer(pan)
+        
+    }
     
     @IBAction func bommButtonClicked(_ sender: Any) {
         boomView.isHidden = false
@@ -167,14 +168,8 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
         }
         
         
-        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(self.pinchRecognizer(_:)))
-        
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(self.panGestRecognizer(_:)))
-        
-        caboomView.isUserInteractionEnabled = true
-        caboomView.isMultipleTouchEnabled = true
-        caboomView.addGestureRecognizer(pinch)
-        caboomView.addGestureRecognizer(pan)
+
+        updateRecognizers(from: caboomView)
         
         editPlace.addSubview(caboomView)
         
@@ -190,21 +185,28 @@ class EditModeViewController: UIViewController, UIImagePickerControllerDelegate,
             view.center = CGPoint(x:view.center.x + translation.x,
                                   y:view.center.y + translation.y)
         }
-
-        sender.view?.isUserInteractionEnabled = true
-        sender.view?.isMultipleTouchEnabled = true
-        sender.setTranslation(CGPoint.zero, in: self.view)
-      
+        for i in 0..<boomViewList.count{
+            if(boomViewList[i].isEqual(sender.view)){
+                try! Storage.common.realm.write {
+                    Storage.common.comicsList[comicsIndex].pages[pageIndex].booms[i].boomX = Double((sender.view?.center.x)!) + Double(translation.x)
+                    Storage.common.comicsList[comicsIndex].pages[pageIndex].booms[i].boomY  = Double((sender.view?.center.y)!) + Double(translation.y)
+                }
+                break
+            }
+        }
         
+      
+        sender.setTranslation(CGPoint.zero, in: self.view)
     }
+    
+   // func recognize
     
      func pinchRecognizer(_ sender: UIPinchGestureRecognizer) {
         if let view = sender.view {
             view.transform = view.transform.scaledBy(x: sender.scale, y: sender.scale)
   
         }
-        sender.view?.isUserInteractionEnabled = true
-        sender.view?.isMultipleTouchEnabled = true
+      
          sender.scale = 1
     }
     
