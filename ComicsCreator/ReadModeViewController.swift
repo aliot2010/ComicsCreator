@@ -110,6 +110,24 @@ class ReadModeViewController: UIViewController {
     }
     
 
+    @IBAction func nextPageClicked(_ sender: UIButton) {
+        if (pageIndex + 1 < Storage.common.comicsList[comicsIndex].pages.count ){
+            pageIndex += 1
+            boomViewList = [BoomView]()
+            bubbleViewList = [BubbleView]()
+            self.viewDidLoad()
+            
+        }
+    }
  
+    @IBAction func previosButtonClicked(_ sender: UIButton) {
+        if (pageIndex  != 0){
+            pageIndex -= 1
+            boomViewList = [BoomView]()
+            bubbleViewList = [BubbleView]()
+            self.viewDidLoad()
+            
+        }
+    }
 
 }
