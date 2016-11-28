@@ -32,12 +32,21 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1366564980_919021232" translatesAutoresizingMaskIntoConstraints="NO" id="eUb-em-PWy">
                                     <rect key="frame" x="0.0" y="-2" width="714" height="811"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <gestureRecognizers/>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="Ovz-gW-KC1" appends="YES" id="NZ4-S7-UU4"/>
+                                        <outletCollection property="gestureRecognizers" destination="jbh-yh-lSk" appends="YES" id="DFu-7T-HiS"/>
+                                    </connections>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                     </subviews>
                     <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="1No-py-FRj" appends="YES" id="DGU-8D-cDC"/>
+                    </connections>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,6 +56,9 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="90" y="59.5"/>
         </view>
+        <pinchGestureRecognizer id="Ovz-gW-KC1"/>
+        <rotationGestureRecognizer id="jbh-yh-lSk"/>
+        <tapGestureRecognizer id="1No-py-FRj"/>
     </objects>
     <resources>
         <image name="1366564980_919021232" width="675" height="1024"/>

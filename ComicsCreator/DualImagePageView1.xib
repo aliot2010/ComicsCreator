@@ -38,6 +38,7 @@
                                     <connections>
                                         <outletCollection property="gestureRecognizers" destination="bGn-X4-Mz3" appends="YES" id="M1a-wF-mge"/>
                                         <outletCollection property="gestureRecognizers" destination="Fbg-FR-MTp" appends="YES" id="QIZ-LK-Myb"/>
+                                        <outletCollection property="gestureRecognizers" destination="c5i-sd-c6q" appends="YES" id="GLL-kx-SO7"/>
                                     </connections>
                                 </imageView>
                             </subviews>
@@ -65,6 +66,7 @@
                                     <connections>
                                         <outletCollection property="gestureRecognizers" destination="wvX-On-KcU" appends="YES" id="Mxx-9h-Vqp"/>
                                         <outletCollection property="gestureRecognizers" destination="U56-gr-A5v" appends="YES" id="Ytx-OS-LF1"/>
+                                        <outletCollection property="gestureRecognizers" destination="EH3-6N-if1" appends="YES" id="p9X-3d-7Lj"/>
                                     </connections>
                                 </imageView>
                             </subviews>
@@ -115,6 +117,16 @@
                 <action selector="rotationRecognizer:" destination="-1" id="NDr-C2-xLL"/>
             </connections>
         </rotationGestureRecognizer>
+        <pinchGestureRecognizer id="EH3-6N-if1">
+            <connections>
+                <action selector="pinchRecognizer:" destination="-1" id="bVm-gb-2Ov"/>
+            </connections>
+        </pinchGestureRecognizer>
+        <pinchGestureRecognizer id="c5i-sd-c6q">
+            <connections>
+                <action selector="pinchRecognizer:" destination="-1" id="wXv-cd-7Oi"/>
+            </connections>
+        </pinchGestureRecognizer>
     </objects>
     <resources>
         <image name="1366564980_919021232" width="675" height="1024"/>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ViewController: UICollectionViewController, UIGestureRecognizerDelegate {
     public let documentsDirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
@@ -104,9 +105,7 @@ class ViewController: UICollectionViewController, UIGestureRecognizerDelegate {
         self.collectionView?.refreshControl
     }
     
-    override func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        
-    }
+   
    
 
 }

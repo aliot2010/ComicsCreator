@@ -21,6 +21,7 @@ class PagesCollectionViewController: UICollectionViewController {
     @IBAction func deleteButtonClicked(_ sender: UIBarButtonItem) {
         if (selectedIndex != -1 && modeFlag == 1){
             Storage.common.deleteAny(object: Storage.common.comicsList[index].pages[selectedIndex])
+             selectedIndex = -1
             self.collectionView?.reloadData()
             self.collectionView?.refreshControl
             
@@ -88,7 +89,7 @@ class PagesCollectionViewController: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         cell.image.image = Tools.comixPatternsImages[Storage.common.comicsList[index].pages[indexPath.row].pattern]
-        //говно?
+       
         cell.label.text = String(indexPath.row + 1)
         return cell
         
@@ -97,6 +98,11 @@ class PagesCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
        
+        if(selectedIndex != -1){
+            let cell = collectionView.cellForItem(at: indexPath)
+            
+            cell?.backgroundColor = UIColor.clear
+        }
         
         if(modeFlag == 1){
             selectedIndex = indexPath.row
@@ -104,6 +110,9 @@ class PagesCollectionViewController: UICollectionViewController {
         
             cell?.backgroundColor = UIColor.orange
         } else {
+            
+            
+            selectedIndex = -1
             openPageInReadMode(byIndex: indexPath.row)
         }
         

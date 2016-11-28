@@ -14,7 +14,7 @@ class AddCoverCollectionViewController: UICollectionViewController {
     
     var comicsIndex = 1
     var pageIndex = -1
-    var comixPatternsImages = [UIImage(named: "single"), UIImage(named: "dual"), UIImage(named: "dual1")]
+    var comixPatternsImages = [UIImage(named: "single"), UIImage(named: "dual"), UIImage(named: "dual1"), UIImage(named: "three"), UIImage(named: "three1")]
     
     
     override func viewDidLoad() {
@@ -63,7 +63,7 @@ class AddCoverCollectionViewController: UICollectionViewController {
     }
     
     
-    let numberOfImages:[Int:Int] = [0:1, 1:2, 2:2]
+    let numberOfImages:[Int:Int] = [0:1, 1:2, 2:2, 3:3, 4:3]
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let page = Page()
         
