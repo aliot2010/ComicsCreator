@@ -37,6 +37,7 @@
 		FA30D75F1DDE20B000E57659 /* CreateComicsCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA30D75E1DDE20B000E57659 /* CreateComicsCover.swift */; };
 		FA317B0F1DDDFA3100CAD924 /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA317B0E1DDDFA3100CAD924 /* CollectionViewModel.swift */; };
 		FABC46D51DEC2CE100D0D335 /* FourImagePageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FABC46D41DEC2CE100D0D335 /* FourImagePageView.xib */; };
+		FABC46D81DEC392E00D0D335 /* ReadModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABC46D71DEC392E00D0D335 /* ReadModeViewController.swift */; };
 		FAD877B21DE759AD009F92DF /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD877B11DE759AD009F92DF /* Image.swift */; };
 		FAFD21491DEC1C51002BEEBA /* ThreeImagePageView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFD21481DEC1C51002BEEBA /* ThreeImagePageView1.xib */; };
 		FAFD214B1DEC2282002BEEBA /* ThreeImagePageView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAFD214A1DEC2282002BEEBA /* ThreeImagePageView2.xib */; };
@@ -77,6 +78,7 @@
 		FA30D75E1DDE20B000E57659 /* CreateComicsCover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateComicsCover.swift; sourceTree = "<group>"; };
 		FA317B0E1DDDFA3100CAD924 /* CollectionViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
 		FABC46D41DEC2CE100D0D335 /* FourImagePageView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FourImagePageView.xib; sourceTree = "<group>"; };
+		FABC46D71DEC392E00D0D335 /* ReadModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadModeViewController.swift; sourceTree = "<group>"; };
 		FAD877B11DE759AD009F92DF /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = ../../../.Trash/Image.swift; sourceTree = "<group>"; };
 		FAFD21481DEC1C51002BEEBA /* ThreeImagePageView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreeImagePageView1.xib; sourceTree = "<group>"; };
 		FAFD214A1DEC2282002BEEBA /* ThreeImagePageView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ThreeImagePageView2.xib; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		FA0725941DDD9FC60093C37F /* ComicsCreator */ = {
 			isa = PBXGroup;
 			children = (
+				FABC46D61DEC391100D0D335 /* ReadMode */,
 				FA0B19831DE9E0EB00120AC3 /* BoomImagesAndClouds */,
 				FA1D7B571DE47D04006F658B /* EditMode */,
 				FA1D7B4C1DE45ECA006F658B /* Patterns */,
@@ -224,6 +227,14 @@
 				FA30D75E1DDE20B000E57659 /* CreateComicsCover.swift */,
 			);
 			name = "Create comix page";
+			sourceTree = "<group>";
+		};
+		FABC46D61DEC391100D0D335 /* ReadMode */ = {
+			isa = PBXGroup;
+			children = (
+				FABC46D71DEC392E00D0D335 /* ReadModeViewController.swift */,
+			);
+			name = ReadMode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA0725981DDD9FC60093C37F /* ViewController.swift in Sources */,
+				FABC46D81DEC392E00D0D335 /* ReadModeViewController.swift in Sources */,
 				FA0725B31DDDB7820093C37F /* CollectionViewCell.swift in Sources */,
 				FA0725961DDD9FC60093C37F /* AppDelegate.swift in Sources */,
 				FA0B1F091DE0705A000B1D22 /* PagesCollectionViewController.swift in Sources */,

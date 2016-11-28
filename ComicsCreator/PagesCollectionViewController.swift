@@ -137,13 +137,19 @@ class PagesCollectionViewController: UICollectionViewController {
             
             pageVC.comicsIndex = self.index
             
+        }  else if segue.identifier == "pagesToPagereader"{
+            guard let pageVC = segue.destination as? ReadModeViewController else {return}
+            
+            pageVC.comicsIndex = self.index
+            pageVC.pageIndex = sender as! Int
+            
         }
         
     }
     
     
     func openPageInReadMode(byIndex:Int){
-        self.performSegue(withIdentifier: "pagesToPagereader", sender: selectedIndex)
+        self.performSegue(withIdentifier: "pagesToPagereader", sender: byIndex)
 
     }
     

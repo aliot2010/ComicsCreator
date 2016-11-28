@@ -50,6 +50,16 @@ class ImagePageView: UIView {
             currentImageViewList[toIndex].image = image
         }
     }
+    func setClickedDesebled(){
+        editViewList[0].backgroundColor = UIColor.black
+        for i in editViewList{
+            
+            i.isUserInteractionEnabled = false
+            i.isMultipleTouchEnabled = false 
+        }
+        
+    }
+    
     
     func updateImages(){//
         for i in 0..<numberOfImage{
