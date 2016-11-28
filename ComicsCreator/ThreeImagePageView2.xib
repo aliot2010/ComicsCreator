@@ -12,6 +12,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImagePageView" customModule="ComicsCreator" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="Hkd-xf-fC4"/>
+                <outlet property="editView2" destination="f84-fO-tEG" id="zE8-4q-zXv"/>
+                <outlet property="editView3" destination="8LX-Cn-XFw" id="LOF-yb-otc"/>
+                <outlet property="eeditView1" destination="ldN-ed-pND" id="Sga-bU-jal"/>
                 <outlet property="imageView1" destination="LB4-vQ-Qie" id="igj-RD-7bS"/>
                 <outlet property="imageView2" destination="Jf4-KP-6Mh" id="9gw-ku-01u"/>
                 <outlet property="imageView3" destination="lpw-tl-CmT" id="Lbq-7v-9nZ"/>
@@ -30,7 +33,7 @@
                             <rect key="frame" x="8" y="8" width="712" height="260"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LB4-vQ-Qie">
+                                <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LB4-vQ-Qie">
                                     <rect key="frame" x="0.0" y="0.0" width="712" height="260"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <gestureRecognizers/>
@@ -51,15 +54,15 @@
                     </connections>
                 </view>
                 <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f84-fO-tEG">
-                    <rect key="frame" x="0.0" y="273" width="741" height="274"/>
+                    <rect key="frame" x="0.0" y="273" width="723" height="274"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bfH-rB-CUS">
-                            <rect key="frame" x="8" y="4" width="715" height="266"/>
+                            <rect key="frame" x="8" y="4" width="712" height="266"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jf4-KP-6Mh">
-                                    <rect key="frame" x="0.0" y="0.0" width="715" height="266"/>
+                                <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jf4-KP-6Mh">
+                                    <rect key="frame" x="0.0" y="0.0" width="712" height="266"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <gestureRecognizers/>
                                     <connections>
@@ -86,7 +89,7 @@
                             <rect key="frame" x="8" y="4" width="712" height="262"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lpw-tl-CmT">
+                                <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lpw-tl-CmT">
                                     <rect key="frame" x="0.0" y="0.0" width="712" height="262"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <gestureRecognizers/>
@@ -114,17 +117,65 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="27" y="52.5"/>
         </view>
-        <tapGestureRecognizer id="psL-K4-LC3"/>
-        <tapGestureRecognizer id="hfy-0M-hFc"/>
-        <tapGestureRecognizer id="NVl-F1-gcn"/>
-        <pinchGestureRecognizer id="hbY-4P-ppH"/>
-        <pinchGestureRecognizer id="iax-Gv-fJA"/>
-        <pinchGestureRecognizer id="B3n-up-Uh1"/>
-        <rotationGestureRecognizer id="Jd4-8t-8h8"/>
-        <rotationGestureRecognizer id="ZuB-39-Hwy"/>
-        <rotationGestureRecognizer id="bgX-q5-yAA"/>
-        <panGestureRecognizer minimumNumberOfTouches="1" id="HKH-P0-F6m"/>
-        <panGestureRecognizer minimumNumberOfTouches="1" id="264-rt-1u6"/>
-        <panGestureRecognizer minimumNumberOfTouches="1" id="QoV-M7-VLl"/>
+        <tapGestureRecognizer id="psL-K4-LC3">
+            <connections>
+                <action selector="tapRecognizer:" destination="-1" id="S0G-ld-V0N"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="hfy-0M-hFc">
+            <connections>
+                <action selector="tapRecognizer:" destination="-1" id="QBh-nc-BBb"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="NVl-F1-gcn">
+            <connections>
+                <action selector="tapRecognizer:" destination="-1" id="wEJ-Pf-Rja"/>
+            </connections>
+        </tapGestureRecognizer>
+        <pinchGestureRecognizer id="hbY-4P-ppH">
+            <connections>
+                <action selector="pinchRecognizer:" destination="-1" id="BXg-jf-RUr"/>
+            </connections>
+        </pinchGestureRecognizer>
+        <pinchGestureRecognizer id="iax-Gv-fJA">
+            <connections>
+                <action selector="pinchRecognizer:" destination="-1" id="N4U-hc-oU7"/>
+            </connections>
+        </pinchGestureRecognizer>
+        <pinchGestureRecognizer id="B3n-up-Uh1">
+            <connections>
+                <action selector="pinchRecognizer:" destination="-1" id="R8m-Jn-wqe"/>
+            </connections>
+        </pinchGestureRecognizer>
+        <rotationGestureRecognizer id="Jd4-8t-8h8">
+            <connections>
+                <action selector="rotationRecognizer:" destination="-1" id="Q0K-BG-Sj4"/>
+            </connections>
+        </rotationGestureRecognizer>
+        <rotationGestureRecognizer id="ZuB-39-Hwy">
+            <connections>
+                <action selector="rotationRecognizer:" destination="-1" id="0nD-Km-c85"/>
+            </connections>
+        </rotationGestureRecognizer>
+        <rotationGestureRecognizer id="bgX-q5-yAA">
+            <connections>
+                <action selector="rotationRecognizer:" destination="-1" id="cml-4l-zcb"/>
+            </connections>
+        </rotationGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="HKH-P0-F6m">
+            <connections>
+                <action selector="panGestRecognizer:" destination="-1" id="5uh-eH-gig"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="264-rt-1u6">
+            <connections>
+                <action selector="panGestRecognizer:" destination="-1" id="bku-Jr-mIV"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="QoV-M7-VLl">
+            <connections>
+                <action selector="panGestRecognizer:" destination="-1" id="fIf-Ui-0Dq"/>
+            </connections>
+        </panGestureRecognizer>
     </objects>
 </document>

@@ -20,9 +20,11 @@ class ImagePageView: UIView {
     @IBOutlet weak var editView2: UIView!
     @IBOutlet weak var editView3: UIView!
     
+    @IBOutlet weak var editView4: UIView!
     
     
     
+    @IBOutlet weak var imageView4: UIImageView!
     
     @IBOutlet weak var imageView3: UIImageView!
     
@@ -35,7 +37,7 @@ class ImagePageView: UIView {
     var editViewList = [UIView]()
     var imageViewList = [UIImageView]()
     var currentImageViewList = [UIImageView]()
-    let namesOfNib: [String: Int] = ["DualImagePageView":2, "SingleImagePageView":1, "DualImagePageView1":2, "ThreeImagePageView":3,  "ThreeImagePageView1":3]
+    let namesOfNib: [String: Int] = ["DualImagePageView":2, "SingleImagePageView":1, "DualImagePageView1":2, "ThreeImagePageView":3,  "ThreeImagePageView1":3, "ThreeImagePageView2":3, "FourImagePageView":4]
     
     func getImage(fromImageView byIndex:Int)->UIImage?{
         if (byIndex <= numberOfImage){
@@ -120,6 +122,10 @@ class ImagePageView: UIView {
         if (imageView3 != nil){
             imageViewList.append(imageView3)
             editViewList.append(editView3)
+        }
+        if (imageView4 != nil){
+            imageViewList.append(imageView4)
+            editViewList.append(editView4)
         }
     }
     
