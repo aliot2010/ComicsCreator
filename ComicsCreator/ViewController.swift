@@ -100,9 +100,11 @@ class ViewController: UICollectionViewController, UIGestureRecognizerDelegate {
     
    
     @IBAction func deleteComics(_ sender: UIBarButtonItem) {
+        if(selectedIndex != -1){
         Storage.common.deleteComix(comix: Storage.common.comicsList[selectedIndex])
          self.collectionView?.reloadData()
         self.collectionView?.refreshControl
+        }
     }
     
    
