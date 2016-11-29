@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BubbleView" customModule="ComicsCreator" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="YOS-9a-Wyo"/>
+                <outlet property="imageView" destination="as0-Yo-FKx" id="GZV-eq-f3Q"/>
+                <outlet property="label" destination="wed-1m-iGt" id="Blh-qn-F7p"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buuble2" translatesAutoresizingMaskIntoConstraints="NO" id="as0-Yo-FKx">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="105"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33333333423423424244342342342342342342" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wed-1m-iGt">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="80"/>
+                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="as0-Yo-FKx" secondAttribute="trailing" id="2Jb-RC-RfM"/>
+                <constraint firstItem="wed-1m-iGt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9Dw-gr-p0Z"/>
+                <constraint firstAttribute="trailing" secondItem="wed-1m-iGt" secondAttribute="trailing" id="F9O-ui-1KY"/>
+                <constraint firstItem="as0-Yo-FKx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="FX3-iT-iSY"/>
+                <constraint firstAttribute="bottom" secondItem="as0-Yo-FKx" secondAttribute="bottom" constant="-25" id="hL4-pk-SWk"/>
+                <constraint firstAttribute="bottom" secondItem="wed-1m-iGt" secondAttribute="bottom" id="iMo-p2-3Zn"/>
+                <constraint firstItem="wed-1m-iGt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="iwr-Wc-QZq"/>
+                <constraint firstItem="as0-Yo-FKx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qAb-9O-Znb"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="10" y="23.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="buuble2" width="958" height="958"/>
+    </resources>
+</document>

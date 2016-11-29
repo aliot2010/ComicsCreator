@@ -7,12 +7,15 @@
 //
 
 import UIKit
-
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
+    
+    
     var window: UIWindow?
+    //public var comicses = Storage.common.realm.objects(Comics.self)
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
